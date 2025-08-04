@@ -12,7 +12,10 @@
 </head>
 <body>
     <header><h1><a href='../index.html' style='color: #fff; text-decoration: none;'>Kinematics, Dynamic and Control of Robot</a></h1><button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button></header>
-    <div class='container'><aside class='sidebar'><nav class='sidebar-nav'><ul><li class='module-item active'><a href='module-1.html'>Module 1: Introduction To Robotics</a><ul class='topic-list'><li><a href='#topic-2'>Introduction to Robotics</a></li><li><a href='#topic-3'>Brief History of Robotics</a></li><li><a href='#topic-4'>Types of Robot</a></li></ul></li></ul></nav></aside><main class='main-content'><div class='topic-section' id='topic-2'><h1>Introduction to Robotics</h1><div class='topic-content'><h2>Robot</h2>
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+    <div class="container">
+        <aside class="sidebar"><nav class='sidebar-nav'><ul><li class='module-item active'><a href='module-1.html'>Module 1: Introduction To Robotics</a><ul class='topic-list'><li><a href='#topic-2'>Introduction to Robotics</a></li><li><a href='#topic-3'>Brief History of Robotics</a></li><li><a href='#topic-4'>Types of Robot</a></li></ul></li></ul></nav></aside>
+        <main class="main-content"><div class='topic-section' id='topic-2'><h1>Introduction to Robotics</h1><div class='topic-content'><h2>Robot</h2>
 <p><span class="selected"><img src="../assets/images/Karel-capek_1754235905976.jpg" alt="" width="103" height="147"></span></p>
 <p><em><span class="selected">Karel Čapek</span></em></p>
 <p><span class="selected">The word 'robot' was first introduced to the public by the Czech playwright Karel Čapek in his 1920 play&nbsp;</span><em><span class="selected">R.U.R. (Rossum's Universal Robots)</span></em><span class="selected">. The term was derived from the Czech word </span><em><span class="selected">robota</span></em><span class="selected">, meaning "forced labor" or "servitude." In the play, the robots were artificial beings built to serve humans, a theme that has resonated through science fiction ever since.</span></p>
@@ -224,8 +227,17 @@
     <div class="quiz-body"></div>
     <script type="application/json" class="quiz-data">[{"id":9,"questionText":"A robot designed with high rigidity in the vertical direction but compliance in the horizontal plane, making it ideal for high-speed assembly, is known as a:","imageUrl":null,"topicId":null,"options":[{"id":37,"optionText":"Articulated Robot","imageUrl":null,"correct":false},{"id":38,"optionText":"Cartesian Robot","imageUrl":null,"correct":false},{"id":39,"optionText":"SCARA Robot","imageUrl":null,"correct":true},{"id":40,"optionText":"Parallel Manipulator","imageUrl":null,"correct":false}]},{"id":10,"questionText":"Which type of robot is characterized by closed-loop kinematic chains, offering high speed and accuracy for tasks like pick-and-place?","imageUrl":null,"topicId":null,"options":[{"id":41,"optionText":"Delta Robot (a type of Parallel Manipulator)","imageUrl":null,"correct":true},{"id":42,"optionText":"PUMA Robot (a type of Articulated Robot)","imageUrl":null,"correct":false},{"id":43,"optionText":"Legged Robot","imageUrl":null,"correct":false},{"id":44,"optionText":"Gantry Robot","imageUrl":null,"correct":false}]},{"id":11,"questionText":"What is the primary advantage of a legged robot compared to a wheeled mobile robot (WMR)?","imageUrl":null,"topicId":null,"options":[{"id":45,"optionText":"Higher energy efficiency on flat surfaces.","imageUrl":null,"correct":false},{"id":46,"optionText":"Ability to traverse complex and unstructured terrain.","imageUrl":null,"correct":true},{"id":47,"optionText":"Simpler mechanical design.","imageUrl":null,"correct":false},{"id":48,"optionText":"Higher top speed on roads.","imageUrl":null,"correct":false}]},{"id":12,"questionText":"A quadcopter is a subtype of which major robot category?","imageUrl":null,"topicId":null,"options":[{"id":49,"optionText":"Manipulators","imageUrl":null,"correct":false},{"id":50,"optionText":"Mobile Robots","imageUrl":null,"correct":false},{"id":51,"optionText":"Humanoid Robots","imageUrl":null,"correct":false},{"id":52,"optionText":"Aerial Robots","imageUrl":null,"correct":true}]}]</script>
 </div>
-</div></main></div>
+</div></main>
+    </div>
+
     <script src="../assets/js/quiz.js"></script>
-    <script>function toggleSidebar() { document.querySelector('.sidebar').classList.toggle('open'); }</script>
+    <script>
+function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('open');
+    document.querySelector('.sidebar-overlay').classList.toggle('open');
+    document.body.classList.toggle('sidebar-open');
+}
+</script>
+
 </body>
 </html>
