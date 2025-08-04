@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             quizHtml += `<div class="question" id="q-${q.id}-${qIndex}">`;
 
             let questionImage = q.imageUrl ? `<img src="${assetPath}${q.imageUrl}" class="question-image" alt="Question image">` : '';
-            quizHtml += `<p><strong>${qIndex + 1}. ${q.questionText}</strong>${questionImage}</p>`;
+            quizHtml += `<div class="question-text"><p><strong>${qIndex + 1}. ${q.questionText}</strong></p></div>${questionImage}`;
 
             q.options.forEach((opt, oIndex) => {
                 let optionImage = opt.imageUrl ? `<img src="${assetPath}${opt.imageUrl}" class="option-image" alt="Option image">` : '';
