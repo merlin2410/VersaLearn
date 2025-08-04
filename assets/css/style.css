@@ -42,6 +42,10 @@ header a { color: #fff; text-decoration: none; }
 .controls h2 { margin-top: 0; border-bottom: 2px solid #0d6efd; padding-bottom: 0.5rem; }
 #info-box { margin-top: 1rem; padding: 1rem; background-color: #e9ecef; border-radius: 5px; }
 @media (max-width: 992px) {
+    .simulator-wrapper { flex-direction: column; }
+    #canvas-container canvas { width: 100% !important; height: auto !important; }
+}
+@media (max-width: 992px) {
     header { display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1001; }
     header h1 { font-size: 1.25rem; }
     .container { flex-direction: column; }
@@ -51,6 +55,4 @@ header a { color: #fff; text-decoration: none; }
     .sidebar-overlay.open { display: block; }
     .main-content, .main-content-full { padding: 1.5rem 1rem; }
     .menu-toggle { display: block; background: #495057; color: white; border: none; padding: 0.5rem 0.8rem; border-radius: 5px; cursor: pointer; font-size: 1.2rem; }
-    .simulator-wrapper { flex-direction: column; }
-    #canvas-container canvas { width: 100% !important; height: auto !important; }
 }

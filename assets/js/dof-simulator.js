@@ -10,7 +10,7 @@ let sketch = function(p) {
 
     p.setup = function() {
         let canvasContainer = document.getElementById('canvas-container');
-        let canvas = p.createCanvas(500, 400); // FIX: Use a fixed size
+        let canvas = p.createCanvas(500, 400);
         canvas.parent('canvas-container');
         p.rectMode(p.CENTER);
         target.x = p.width / 2;
@@ -40,7 +40,7 @@ let sketch = function(p) {
         target.x = p.constrain(target.x, 15, p.width - 15);
         target.y = p.constrain(target.y, 15, p.height - 15);
         p.push();
-        p.translate(target.x, target.y); // FIX: Removed extra dot
+        p.translate(target.x, target.y);
         p.rotate(target.angle);
         p.stroke(0);
         p.strokeWeight(2);
