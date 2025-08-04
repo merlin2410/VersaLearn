@@ -36,6 +36,11 @@ header a { color: #fff; text-decoration: none; }
 .quiz-body .incorrect { color: #dc3545; }
 .check-btn { padding: 8px 16px; background-color: #0d6efd; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 0.5rem; }
 .menu-toggle, .sidebar-overlay { display: none; }
+.simulator-wrapper { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-top: 2rem; }
+#canvas-container { border: 2px solid #ccc; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+.controls { background-color: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); min-width: 250px; }
+.controls h2 { margin-top: 0; border-bottom: 2px solid #0d6efd; padding-bottom: 0.5rem; }
+#info-box { margin-top: 1rem; padding: 1rem; background-color: #e9ecef; border-radius: 5px; }
 @media (max-width: 992px) {
     header { display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1001; }
     header h1 { font-size: 1.25rem; }
