@@ -51,4 +51,6 @@ header a { color: #fff; text-decoration: none; }
     .sidebar-overlay.open { display: block; }
     .main-content, .main-content-full { padding: 1.5rem 1rem; }
     .menu-toggle { display: block; background: #495057; color: white; border: none; padding: 0.5rem 0.8rem; border-radius: 5px; cursor: pointer; font-size: 1.2rem; }
+    .simulator-wrapper { flex-direction: column; }
+    #canvas-container canvas { width: 100% !important; height: auto !important; }
 }
