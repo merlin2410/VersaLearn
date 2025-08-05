@@ -37,6 +37,15 @@ header a { color: #fff; text-decoration: none; }
 .quiz-body .incorrect { color: #dc3545; }
 .check-btn { padding: 8px 16px; background-color: #0d6efd; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 0.5rem; }
 .menu-toggle, .sidebar-overlay { display: none; }
+.simulator-wrapper-links { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 2rem; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-top: 2rem; }
+#canvas-container-links { flex: 2; min-width: 500px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+.controls-links { flex: 1; min-width: 300px; background-color: #f8f9fa; padding: 1.5rem; border-radius: 8px; border: 1px solid #dee2e6; }
+.controls-links h2 { margin-top: 0; border-bottom: 2px solid #0d6efd; padding-bottom: 0.5rem; }
+@media (max-width: 900px) {
+    .simulator-wrapper-links { flex-direction: column; }
+    #canvas-container-links { width: 100%; min-width: auto; }
+    .controls-links { width: 100%; box-sizing: border-box; }
+}
 .simulator-wrapper { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-top: 2rem; }
 #canvas-container { border: 2px solid #ccc; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
 .controls { background-color: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); min-width: 250px; }
@@ -46,6 +55,7 @@ header a { color: #fff; text-decoration: none; }
     .simulator-wrapper { flex-direction: column; }
     #canvas-container canvas { width: 100% !important; height: auto !important; }
 }
+#canvas-container-kinematic-chain { border-radius: 12px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); background: white; }
 .simulator-wrapper-3d { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-top: 2rem; }
 #canvas-container-3d { flex: 2; min-width: 400px; height: 500px; border: 1px solid #dee2e6; }
 .controls-3d { flex: 1; min-width: 280px; background-color: #f8f9fa; padding: 1.5rem; border-radius: 8px; }

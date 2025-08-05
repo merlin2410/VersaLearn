@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links and Joints | Module 2</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body>
+    <header><h1><a href='../../index.html' style='color: #fff; text-decoration: none;'>Kinematics, Dynamic and Control of Robot</a></h1><button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button></header>
+    <div class='container'><aside class='sidebar'><nav class='sidebar-nav'><ul><li class='module-item '><a href='../module-1/topic-2.html'>Module 1: Introduction To Robotics</a></li><li class='module-item active'><a href='../module-2/topic-8.html'>Module 2: Robot Anatomy</a><ul class='topic-list'><li class='topic-item '><a href='topic-8.html'>Anatomy of a Robotic Manipulator</a></li><li class='topic-item active'><a href='topic-9.html'>Links and Joints</a></li><li class='topic-item '><a href='topic-10.html'>Interactive Lab: Links and Joints</a></li><li class='topic-item '><a href='topic-11.html'>Interactive Lab: Kinematic Chains</a></li></ul></li></ul></nav></aside><main class='main-content'><div class='topic-section' id='topic-9'><h1>Links and Joints</h1><div class='topic-content'><p><span class="selected">The core structure of a manipulator is its </span><strong><span class="selected">kinematic chain</span></strong><span class="selected">, an assembly of rigid bodies (</span><strong><span class="selected">links</span></strong><span class="selected">) connected by articulations (</span><strong><span class="selected">joints</span></strong><span class="selected">).</span></p>
+<h2><strong><span class="selected">Links</span></strong></h2>
+<p><span class="selected">These are the rigid structural members of the robot that connect the joints. For the purpose of kinematic analysis, we often model them as simple lines of a fixed length connecting joint axes. In reality, they are complex structures, meticulously designed for high strength, high stiffness, and low inertia to allow for fast and precise movements. The first link in the chain, which is fixed to a stationary surface, is called the&nbsp;</span><strong><span class="selected">base link</span></strong><span class="selected">.</span></p>
+<h2><strong><span class="selected">Joints</span></strong></h2>
+<p><span class="selected">These are the components that allow constrained, relative motion between two links. In most industrial robots, each joint provides a single degree of freedom (DOF). The two most common types are:</span></p>
+<h3><strong><span class="selected">Revolute (R) Joint</span></strong></h3>
+<p><strong><span class="selected"><img src="../../assets/images/mceclip0_1754409520748.png" width="300" height="239"></span></strong></p>
+<p><span class="selected">Allows relative rotation between two links about a single axis. It provides one rotational DOF. A human elbow or knee is a good biological analog.</span></p>
+<h3><strong><span class="selected">Prismatic (P) Joint</span></strong></h3>
+<p><strong><span class="selected"><img src="../../assets/images/mceclip1_1754409699485.png" width="301" height="185"></span></strong></p>
+<p><span class="selected">Allows linear or sliding motion between two links along a single axis. It provides one translational DOF. A hydraulic cylinder extending and retracting is a classic example.</span></p>
+<h2><strong><span class="selected">Kinematic Chain Structure</span></strong></h2>
+<p><span class="selected">The manner in which links and joints are connected defines the robot's fundamental structure and capabilities.</span>&nbsp;</p>
+<h3><strong><span class="selected">Open Kinematic Chain (Serial Manipulators)</span></strong></h3>
+<p><span class="selected"><img src="../../assets/images/mceclip0_1754416773551.png" width="300" height="285"></span></p>
+<p><span class="selected">This is the most common structure. The links and joints are connected in series, forming a single, un-branched chain from the base to the end-effector. Manipulators with this structure are called </span><strong><span class="selected">serial manipulators</span></strong><span class="selected">. In an open chain, there is only one sequence of links connecting the base to the end-effector.</span></p>
+<h3><strong><span class="selected">Closed Kinematic Chain (Parallel Manipulators)</span></strong></h3>
+<p><span class="selected"><img src="../../assets/images/mceclip1_1754416822990.png" width="300" height="289"></span></p>
+<p><span class="selected">In this structure, the kinematic chain forms one or more closed loops. This means there are multiple kinematic paths from the base to the end-effector. Manipulators with this structure are called </span><strong><span class="selected">parallel manipulators</span></strong><span class="selected"> (e.g., the Delta robot). Closed chains generally offer higher stiffness, greater payload capacity for their size, and potentially higher accuracy, but often at the cost of a smaller, more complex workspace and more intricate kinematic analysis.</span></p>
+<p>&nbsp;</p></div></div></main></div>
+    <script src="../../assets/js/quiz.js"></script>
+    
+    <script>
+function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('open');
+    document.querySelector('.sidebar-overlay').classList.toggle('open');
+    document.body.classList.toggle('sidebar-open');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Lab: Links and Joints | Module 2</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body>
+    <header><h1><a href='../../index.html' style='color: #fff; text-decoration: none;'>Kinematics, Dynamic and Control of Robot</a></h1><button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button></header>
+    <div class='container'><aside class='sidebar'><nav class='sidebar-nav'><ul><li class='module-item '><a href='../module-1/topic-2.html'>Module 1: Introduction To Robotics</a></li><li class='module-item active'><a href='../module-2/topic-8.html'>Module 2: Robot Anatomy</a><ul class='topic-list'><li class='topic-item '><a href='topic-8.html'>Anatomy of a Robotic Manipulator</a></li><li class='topic-item '><a href='topic-9.html'>Links and Joints</a></li><li class='topic-item active'><a href='topic-10.html'>Interactive Lab: Links and Joints</a></li><li class='topic-item '><a href='topic-11.html'>Interactive Lab: Kinematic Chains</a></li></ul></li></ul></nav></aside><main class='main-content'><div class='topic-section' id='topic-10'><h1>Interactive Lab: Links and Joints</h1><div class='topic-content'><p>Experiment with links and joints.</p></div><div class="simulator-wrapper-links">
+    <div id="canvas-container-links"></div>
+    <div class="controls-links">
+        <h2>Select Joint Type</h2>
+        <div><label><input type="radio" name="joint-type" value="revolute" checked> Revolute (Rotary) Joint</label></div>
+        <div><label><input type="radio" name="joint-type" value="prismatic"> Prismatic (Sliding) Joint</label></div>
+        <div class="slider-control">
+            <label for="joint-slider"><span id="slider-label">Angle (θ)</span>: <span id="slider-value">0</span>°</label>
+            <input type="range" id="joint-slider" min="-180" max="180" value="0">
+        </div>
+        <div id="info-box">
+            <h3 id="info-title">Revolute Joint</h3>
+            <p id="info-text">A revolute joint allows for rotational motion about a single axis. It has one degree of freedom.</p>
+        </div>
+    </div>
+</div>
+</div></main></div>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script><script src="../../assets/js/links-joints-simulator.js"></script>
+    <script>
+function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('open');
+    document.querySelector('.sidebar-overlay').classList.toggle('open');
+    document.body.classList.toggle('sidebar-open');
+}
+</script>
+
+</body>
+</html>
