@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Robotics | Module 1</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body>
+    <header><h1><a href='../../index.html' style='color: #fff; text-decoration: none;'>Kinematics, Dynamic and Control of Robot</a></h1><button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button></header>
+    <div class='container'><aside class='sidebar'><nav class='sidebar-nav'><ul><li class='module-item active'><a href='../module-1/topic-2.html'>Module 1: Introduction To Robotics</a><ul class='topic-list'><li class='topic-item active'><a href='topic-2.html'>Introduction to Robotics</a></li><li class='topic-item '><a href='topic-3.html'>Brief History of Robotics</a></li><li class='topic-item '><a href='topic-4.html'>Types of Robot</a></li><li class='topic-item '><a href='topic-5.html'>Degrees of Freedom (DOF))</a></li><li class='topic-item '><a href='topic-6.html'>Interactive Lab: Degrees of Freedom</a></li></ul></li></ul></nav></aside><main class='main-content'><div class='topic-section' id='topic-2'><h1>Introduction to Robotics</h1><div class='topic-content'><h2>Robot</h2>
+<p><span class="selected"><img src="../../assets/images/Karel-capek_1754235905976.jpg" alt="" width="103" height="147"></span></p>
+<p><em><span class="selected">Karel Čapek</span></em></p>
+<p><span class="selected">The word 'robot' was first introduced to the public by the Czech playwright Karel Čapek in his 1920 play&nbsp;</span><em><span class="selected">R.U.R. (Rossum's Universal Robots)</span></em><span class="selected">. The term was derived from the Czech word </span><em><span class="selected">robota</span></em><span class="selected">, meaning "forced labor" or "servitude." In the play, the robots were artificial beings built to serve humans, a theme that has resonated through science fiction ever since.</span></p>
+<p><span class="selected">While science fiction often portrays robots as anthropomorphic machines endowed with intelligence and personality, the engineering definition is more functional. The Robot Institute of America (RIA) provides a widely accepted definition:</span></p>
+<blockquote>
+<p><strong><span class="selected">"A robot is a reprogrammable, multifunctional manipulator designed to move material, parts, tools, or specialized devices through variable programmed motions for the performance of a variety of tasks."</span></strong></p>
+</blockquote>
+<p><span class="selected"><img src="../../assets/images/Gemini_Generat_1754235947434.jpg" alt="" width="180" height="180"></span></p>
+<p><span class="selected">The key elements in this definition are&nbsp;</span><strong><span class="selected">reprogrammability</span></strong><span class="selected"> and </span><strong><span class="selected">versatility</span></strong><span class="selected">. Unlike fixed automation (or "hard automation"), which consists of custom-built machinery designed for a single, high-volume task, a robot can be repurposed for different tasks by changing its programming and end-effector (the tool at the end of its arm). This flexibility makes robotics a cornerstone of modern, agile manufacturing.</span></p>
+<p><strong><span class="selected">The Definition of Robotics</span></strong></p>
+<p><span class="selected">The term </span><strong><span class="selected">robotics</span></strong><span class="selected"> was coined by the science fiction author Isaac Asimov in 1942. He famously formulated the </span><strong><span class="selected">"Three Laws of Robotics"</span></strong><span class="selected"> as a set of ethical principles for robots to follow:</span></p>
+<ol>
+<li>
+<p><span class="selected">A robot may not injure a human being or, through inaction, allow a human being to come to harm.</span></p>
+</li>
+<li>
+<p><span class="selected">A robot must obey the orders given it by human beings except where such orders would conflict with the First Law.</span></p>
+</li>
+<li>
+<p><span class="selected">A robot must protect its own existence as long as such protection does not conflict with the First or Second Law.</span></p>
+</li>
+</ol>
+<p><span class="selected">While these laws remain in the realm of fiction, they underscore the concept of a machine designed to operate safely and predictably.</span></p>
+<p><span class="selected">In an engineering context, robotics is the interdisciplinary science and technology of the design, construction, operation, and application of robots. It integrates knowledge from several fields:</span></p>
+<ul>
+<li>
+<p><strong><span class="selected">Mechanical Engineering:</span></strong><span class="selected"> Kinematics, dynamics, material science, and mechanism design.</span></p>
+</li>
+<li>
+<p><strong><span class="selected">Electrical Engineering:</span></strong><span class="selected"> Electronics, control systems theory, actuators, and sensor design.</span></p>
+</li>
+<li>
+<p><strong><span class="selected">Computer Science:</span></strong><span class="selected"> Programming, artificial intelligence, computer vision, and algorithm design.</span></p>
+</li>
+</ul>
+<p><span class="selected">At its core, robotics is the study of the </span><strong><span class="selected">intelligent connection between perception and action</span></strong><span class="selected">. A robot senses its environment, plans a course of action based on that sensory input and its programmed goals, and then acts upon the environment.</span></p></div><div class="quiz-container" data-topic-id="2" data-asset-path="../../assets/images/">
+    <h3>Test Your Knowledge</h3>
+    <div class="quiz-body"></div>
+    <script type="application/json" class="quiz-data">[{"id":1,"questionText":"Fundamentally, robotics as an engineering discipline is the study of:","imageUrl":null,"topicId":null,"options":[{"id":1,"optionText":"The ethical implications of artificial intelligence as described by Asimov.","imageUrl":null,"correct":false},{"id":2,"optionText":"The intelligent connection between perception and action.","imageUrl":null,"correct":true},{"id":3,"optionText":"The manufacturing of mechanical arms for factory automation.","imageUrl":null,"correct":false},{"id":4,"optionText":"The history of automated devices from antiquity to the present.","imageUrl":null,"correct":false}]},{"id":2,"questionText":"According to the RIA definition, what is the primary difference between a robot and a piece of \"hard automation\"?","imageUrl":null,"topicId":null,"options":[{"id":5,"optionText":"A robot is electrically powered, while hard automation is purely mechanical.","imageUrl":null,"correct":false},{"id":6,"optionText":"A robot can be reprogrammed for different tasks, while hard automation is built for a single purpose.","imageUrl":null,"correct":true},{"id":7,"optionText":"A robot has at least six degrees of freedom, while hard automation has fewer.","imageUrl":null,"correct":false},{"id":8,"optionText":"A robot uses sensors, while hard automation does not.","imageUrl":null,"correct":false}]},{"id":3,"questionText":"Which of the following best describes the interdisciplinary nature of robotics?","imageUrl":null,"topicId":null,"options":[{"id":9,"optionText":"It is primarily a subfield of mechanical engineering focused on mechanism design.","imageUrl":null,"correct":false},{"id":10,"optionText":"It combines principles from mechanical engineering, electrical engineering, and computer science.","imageUrl":null,"correct":true},{"id":11,"optionText":"It is a branch of computer science focused on artificial intelligence.","imageUrl":null,"correct":false},{"id":12,"optionText":"It is the modern version of industrial engineering, focused on factory efficiency.","imageUrl":null,"correct":false}]},{"id":4,"questionText":"The word \"robot\" originates from a play and is derived from a Czech word meaning:","imageUrl":null,"topicId":null,"options":[{"id":17,"optionText":"\"Forced labor\"","imageUrl":null,"correct":true},{"id":18,"optionText":"\"Mechanical man\"","imageUrl":null,"correct":false},{"id":19,"optionText":"\"To think\"","imageUrl":null,"correct":false},{"id":20,"optionText":"\"Automated\"","imageUrl":null,"correct":false}]}]</script>
+</div>
+</div></main></div>
+    <script src="../../assets/js/quiz.js"></script>
+    
+    <script>
+function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('open');
+    document.querySelector('.sidebar-overlay').classList.toggle('open');
+    document.body.classList.toggle('sidebar-open');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degrees of Freedom (DOF)) | Module 1</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body>
+    <header><h1><a href='../../index.html' style='color: #fff; text-decoration: none;'>Kinematics, Dynamic and Control of Robot</a></h1><button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button></header>
+    <div class='container'><aside class='sidebar'><nav class='sidebar-nav'><ul><li class='module-item active'><a href='../module-1/topic-2.html'>Module 1: Introduction To Robotics</a><ul class='topic-list'><li class='topic-item '><a href='topic-2.html'>Introduction to Robotics</a></li><li class='topic-item '><a href='topic-3.html'>Brief History of Robotics</a></li><li class='topic-item '><a href='topic-4.html'>Types of Robot</a></li><li class='topic-item active'><a href='topic-5.html'>Degrees of Freedom (DOF))</a></li><li class='topic-item '><a href='topic-6.html'>Interactive Lab: Degrees of Freedom</a></li></ul></li></ul></nav></aside><main class='main-content'><div class='topic-section' id='topic-5'><h1>Degrees of Freedom (DOF))</h1><div class='topic-content'><p><span class="selected">Before we can analyze the motion of a robot, we must first quantify its capacity for motion. This is done using the concept of </span><strong><span class="selected">Degrees of Freedom (DOF)</span></strong><span class="selected">.</span></p>
+<blockquote>
+<p><span class="selected">The </span><strong><span class="selected">Degrees of Freedom (DOF)</span></strong><span class="selected"> of a body is the number of independent parameters required to completely specify its configuration (position and orientation) in space.</span></p>
+</blockquote>
+<p><span class="selected">The DOF of a robot's end-effector determines its ability to reach different points and achieve different orientations. The number of joints in a manipulator is often referred to as its degrees of freedom, as each joint typically provides one independent parameter of motion.</span></p>
+<p><span class="selected">Let's build this concept from a simple point to a full rigid body.</span></p>
+<h3><strong><span class="selected">DOF of a Point:</span></strong> </h3>
+<p><span class="selected">A point is a geometric entity with no size or orientation. We only need to specify its position.</span></p>
+<p><span class="selected">In </span><strong><span class="selected">1D space</span></strong><span class="selected"> (a line), a point can only move along that line. Its position can be described by a single variable (e.g.,\((x,y)\))</span><span class="selected">. Therefore, it has </span><strong><span class="selected">1 DOF</span></strong><span class="selected">.</span></p>
+<p><span class="selected">In&nbsp;</span><strong><span class="selected">2D space</span></strong><span class="selected"> (a plane), a point's position is described by two coordinates (e.g., \((x,y)\))</span><span class="selected">. Therefore, it has </span><strong><span class="selected">2 DOF</span></strong><span class="selected">.</span></p>
+<p><span class="selected">In </span><strong><span class="selected">3D space</span></strong><span class="selected">, a point's position is described by three coordinates (e.g., \((x,y)\)</span><span class="selected">). Therefore, it has </span><strong><span class="selected">3 DOF</span></strong><span class="selected">.</span></p>
+<h3><strong><span class="selected">DOF of a Rigid Body:</span></strong> </h3>
+<p><span class="selected">A rigid body is an object of a fixed size and shape. Unlike a point, we must specify not only its position but also its&nbsp;</span><strong><span class="selected">orientation</span></strong><span class="selected">.</span></p>
+<p><strong><span class="selected">In 2D Space (Planar):</span></strong><span class="selected"> Consider a flat object moving on a tabletop. To specify its configuration, we need to know the position of a reference point on the object (2 parameters: $</span><span class="base"><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mord mathnormal">y</span><span class="mclose">)$</span></span><span class="selected">) and its angle of rotation about an axis perpendicular to the plane (1 parameter: $\theta</span><span class="mord mathnormal">$</span><span class="selected">).</span></p>
+<ul>
+<li><span class="selected">Total DOF = 2 (for position) + 1 (for orientation) = </span><strong><span class="selected">3 DOF</span></strong><span class="selected">.</span></li>
+</ul>
+<p><strong><span class="selected">In 3D Space:</span></strong><span class="selected"> This is the most general case for robotics. To specify the configuration of a rigid body in 3D space, we need:</span></p>
+<ul>
+<li>
+<p><strong><span class="selected">3 parameters for position:</span></strong><span class="selected"> The $</span><span class="base"><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mord mathnormal">y</span><span class="mpunct">,</span><span class="mord mathnormal">z</span><span class="mclose">)$</span></span><span class="selected"> coordinates of a reference point on the body.</span></p>
+</li>
+<li>
+<p><strong><span class="selected">3 parameters for orientation:</span></strong><span class="selected"> Describing the body's rotation in space. This is more complex than the 2D case. While there are many ways to represent 3D orientation (e.g., Euler angles, quaternions), it can be proven that three independent parameters are required. Common conventions include describing rotations about three principal axes (e.g., roll, pitch, and yaw).</span></p>
+</li>
+<li>
+<p><span class="selected">Total DOF = 3 (for position) + 3 (for orientation) = </span><strong><span class="selected">6 DOF</span></strong><span class="selected">.</span></p>
+</li>
+</ul>
+<p><span class="selected">This value is fundamental: </span><strong><span class="selected">an unconstrained rigid body in 3D space has 6 degrees of freedom.</span></strong><span class="selected"> This means that for a general-purpose robotic manipulator to be able to place its end-effector in any arbitrary position and orientation within its workspace, it must have at least 6 degrees of freedom.</span></p></div></div></main></div>
+    <script src="../../assets/js/quiz.js"></script>
+    
+    <script>
+function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('open');
+    document.querySelector('.sidebar-overlay').classList.toggle('open');
+    document.body.classList.toggle('sidebar-open');
+}
+</script>
+
+</body>
+</html>

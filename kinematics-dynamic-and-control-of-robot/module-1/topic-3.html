@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brief History of Robotics | Module 1</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body>
+    <header><h1><a href='../../index.html' style='color: #fff; text-decoration: none;'>Kinematics, Dynamic and Control of Robot</a></h1><button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button></header>
+    <div class='container'><aside class='sidebar'><nav class='sidebar-nav'><ul><li class='module-item active'><a href='../module-1/topic-2.html'>Module 1: Introduction To Robotics</a><ul class='topic-list'><li class='topic-item '><a href='topic-2.html'>Introduction to Robotics</a></li><li class='topic-item active'><a href='topic-3.html'>Brief History of Robotics</a></li><li class='topic-item '><a href='topic-4.html'>Types of Robot</a></li><li class='topic-item '><a href='topic-5.html'>Degrees of Freedom (DOF))</a></li><li class='topic-item '><a href='topic-6.html'>Interactive Lab: Degrees of Freedom</a></li></ul></li></ul></nav></aside><main class='main-content'><div class='topic-section' id='topic-3'><h1>Brief History of Robotics</h1><div class='topic-content'><p><span class="selected">The modern robot was born from the confluence of two mid-20th-century technologies: </span><strong><span class="selected">teleoperators</span></strong><span class="selected"> and </span><strong><span class="selected">Computer Numerically Controlled (CNC)</span></strong><span class="selected"> machine tools.</span></p>
+<p><span class="selected"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/NTS_-_EMAD_Facility_009.jpg/500px-NTS_-_EMAD_Facility_009.jpg" alt="" width="149" height="186"></span></p>
+<p><em><span class="selected">Remote Manipulator</span></em></p>
+<p><strong><span class="selected">1940s-1950s: The Precursors.</span></strong><span class="selected"> After World War II, remotely controlled mechanical manipulators were developed at Argonne and Oak Ridge National Laboratories to handle radioactive materials. These master-slave systems allowed a human operator to guide a remote arm through a series of motions. Concurrently, the development of CNC technology enabled the programming of precise motion paths for machine tools.</span></p>
+<div class="image-container"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Unimate_pouring_coffee_for_a_woman_at_Biltmore_Hotel%2C_1967.jpg/500px-Unimate_pouring_coffee_for_a_woman_at_Biltmore_Hotel%2C_1967.jpg" alt="" width="215" height="198"><img src="https://static01.nyt.com/images/2011/08/16/business/DEVOL2-obit/DEVOL2-obit-jumbo.jpg?quality=75&amp;auto=webp" alt="" width="300" height="200"></div>
+<p><em><span class="selected">Unimate </span></em></p>
+<p><strong><span class="selected">1954-1961: The First Industrial Robot.</span></strong><span class="selected"> Inventor George Devol patented a "Programmed Article Transfer" device in 1954, combining the articulated arm of a teleoperator with the programmability of a CNC machine. In 1956, Devol and entrepreneur Joseph Engelberger founded </span><strong><span class="selected">Unimation</span></strong><span class="selected">, the world's first robotics company. In 1961, the first "Unimate" robot was installed at a General Motors plant to tend a die-casting machine. This marked the beginning of industrial robotics. The key innovation was its reprogrammability, allowing it to be adapted to new tasks at a relatively low cost.</span></p>
+<p><strong><span class="selected">1960s-1970s: Adding Senses and Intelligence.</span></strong><span class="selected"> The utility of robots was greatly enhanced through sensory feedback. In 1962, Heinrich Ernst developed a robot with force sensing that could stack blocks. This led to the creation of the Project MAC (Man And Computer) at MIT. Around the same time, early robot vision systems were developed. Several foundational robot arms, such as the </span><strong><span class="selected">Stanford Arm</span></strong><span class="selected">, were created at universities, driving research forward. In 1968, Unimation granted a license to Kawasaki Heavy Industries, beginning the rapid adoption and development of robotics in Japan.</span></p>
+<p><span class="selected"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Unimate_500_PUMA_Deutsches_Museum.jpg/500px-Unimate_500_PUMA_Deutsches_Museum.jpg" alt="" width="190" height="220"></span></p>
+<p><em><span class="selected">PUMA</span></em></p>
+<p><strong><span class="selected">1970s: The Rise of Software and Assembly.</span></strong><span class="selected"> The first high-level robot programming language, </span><strong><span class="selected">WAVE</span></strong><span class="selected">, was developed at Stanford in 1973. In 1974, Cincinnati Milacron introduced the first computer-controlled industrial robot, the </span><strong><span class="selected">T&sup3; (The Tomorrow Tool)</span></strong><span class="selected">. A major breakthrough in assembly came from the Draper Laboratories with the invention of the Remote Center Compliance (RCC) device, a passive mechanical wrist that greatly simplified part-insertion tasks. This era culminated in Unimation's introduction of the </span><strong><span class="selected">PUMA (Programmable Universal Machine for Assembly)</span></strong><span class="selected"> in 1978, which became a standard in both industry and research for many years.</span></p>
+<p><strong><span class="selected">1980s: A Focus on Dynamics and Control.</span></strong><span class="selected"> The 1980s saw a shift from building new robot mechanisms to understanding the fundamental mathematics governing their motion. Researchers developed efficient recursive algorithms (Lagrangian and Newton-Euler formulations) for computing robot dynamics. This enabled the development of advanced control strategies like </span><strong><span class="selected">"computed torque" control</span></strong><span class="selected">, which used a mathematical model of the robot's dynamics to achieve highly accurate trajectory tracking. In 1981, a </span><strong><span class="selected">direct-drive robot</span></strong><span class="selected">, which eliminated the need for gear reduction, was developed at Carnegie Mellon University by Haruhiko Asada, leading to higher speed and accuracy.</span></p>
+<p><span class="selected"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Cmglee_Cambridge_Science_Festival_2015_da_Vinci.jpg/500px-Cmglee_Cambridge_Science_Festival_2015_da_Vinci.jpg" alt="" width="300" height="200"></span></p>
+<p><em><span class="selected">da Vinci Surgical System</span></em></p>
+<p><strong><span class="selected">1990s: Robotics Beyond the Factory.</span></strong><span class="selected"> The 1990s saw robotics begin to move out of the structured environment of the factory floor.</span></p>
+<ul>
+<li><strong><span class="selected">Space Robotics:</span></strong><span class="selected"> The Mars Pathfinder mission in 1997 deployed </span><strong><span class="selected">Sojourner</span></strong><span class="selected">, the first robotic rover to operate on another planet, demonstrating the viability of mobile robotics in extreme, remote environments.</span></li>
+<li>
+<p><strong><span class="selected">Surgical Robotics:</span></strong><span class="selected"> The end of the decade saw the introduction of the </span><strong><span class="selected">da Vinci Surgical System</span></strong><span class="selected">, which brought teleoperated precision and minimally invasive techniques to the operating room.</span></p>
+</li>
+<li>
+<p><strong><span class="selected">Legged Locomotion:</span></strong><span class="selected"> Honda unveiled the </span><strong><span class="selected">P2</span></strong><span class="selected"> humanoid robot in 1996, a major step towards creating dynamically balanced, walking robots.</span></p>
+</li>
+</ul>
+<p><strong><span class="selected"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Honda_ASIMO_%28ver._2011%29_2011_Tokyo_Motor_Show.jpg/500px-Honda_ASIMO_%28ver._2011%29_2011_Tokyo_Motor_Show.jpg" alt="" width="242" height="379"></span></strong></p>
+<p><em><span class="selected">Asimo</span></em></p>
+<p><strong><span class="selected">2000s: The Dawn of Autonomous Systems.</span></strong><span class="selected"> This decade was marked by the rise of truly autonomous robots and open-source platforms.</span>&nbsp;&nbsp;</p>
+<ul>
+<li>
+<p><strong><span class="selected">Consumer Robotics:</span></strong><span class="selected"> iRobot launched the </span><strong><span class="selected">Roomba</span></strong><span class="selected"> vacuum cleaner in 2002, which became the first commercially successful domestic robot, bringing robotics into millions of homes.</span></p>
+</li>
+<li>
+<p><strong><span class="selected">Logistics and Warehousing:</span></strong><span class="selected"> Kiva Systems (later acquired by Amazon) revolutionized warehouse logistics with its fleet of autonomous mobile robots, demonstrating a powerful new application for multi-robot systems.</span></p>
+</li>
+<li>
+<p><strong><span class="selected">Dynamic Legged Robots:</span></strong><span class="selected"> Boston Dynamics' </span><strong><span class="selected">BigDog</span></strong><span class="selected">, funded by DARPA, showcased unprecedented capabilities in dynamic balance and terrain negotiation for a quadruped robot.</span></p>
+</li>
+<li>
+<p><strong><span class="selected">Open-Source Platforms:</span></strong><span class="selected"> The introduction of the </span><strong><span class="selected">Robot Operating System (ROS)</span></strong><span class="selected"> in 2007 provided a standardized, open-source framework for robot software development, dramatically accelerating research and collaboration worldwide.</span></p>
+</li>
+</ul>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Bio-inspired_Big_Dog_quadruped_robot_is_being_developed_as_a_mule_that_can_traverse_difficult_terrain.tiff/lossy-page1-375px-Bio-inspired_Big_Dog_quadruped_robot_is_being_developed_as_a_mule_that_can_traverse_difficult_terrain.tiff.jpg" alt="" width="226" height="271"></p>
+<p><em>BigDog</em></p>
+<p><strong><span class="selected">2010s-Present: The AI and Collaboration Era.</span></strong><span class="selected"> The current era is defined by the profound impact of artificial intelligence, particularly deep learning, and the move towards human-robot collaboration.</span></p>
+<ul>
+<li>
+<p><strong><span class="selected">Deep Learning Revolution:</span></strong><span class="selected"> Advances in deep learning enabled breakthroughs in robot perception (object recognition, scene understanding) and control. Researchers began using techniques like reinforcement learning to teach robots complex manipulation skills from scratch.</span></p>
+</li>
+<li>
+<p><strong><span class="selected">Collaborative Robots (Cobots):</span></strong><span class="selected"> A new class of robots, designed to be safe to operate directly alongside humans without safety cages, emerged. Companies like Universal Robots and Rethink Robotics pioneered cobots for flexible automation tasks.</span></p>
+</li>
+<li>
+<p><strong><span class="selected">Autonomous Vehicles:</span></strong><span class="selected"> The DARPA Urban Challenge in 2007 spurred massive investment in self-driving car technology, which has become one of the most visible and impactful areas of modern robotics.</span></p>
+</li>
+<li>
+<p><strong><span class="selected">Humanoid Advancement:</span></strong><span class="selected"> Boston Dynamics' </span><strong><span class="selected">Atlas</span></strong><span class="selected"> robot demonstrated human-level agility, including running, jumping, and performing gymnastics, pushing the boundaries of dynamic control and whole-body motion planning.</span></p>
+</li>
+</ul>
+<p><span class="selected">This rich history of innovation in mechanics, sensing, and computation has led to the sophisticated and versatile robots in use today.</span></p></div><div class="quiz-container" data-topic-id="3" data-asset-path="../../assets/images/">
+    <h3>Test Your Knowledge</h3>
+    <div class="quiz-body"></div>
+    <script type="application/json" class="quiz-data">[{"id":5,"questionText":"The first industrial robot, the Unimate, was invented by George Devol and brought to market by his company, Unimation, which he co-founded with:","imageUrl":null,"topicId":null,"options":[{"id":21,"optionText":"Isaac Asimov","imageUrl":null,"correct":false},{"id":22,"optionText":"Karel Čapek","imageUrl":null,"correct":false},{"id":23,"optionText":"Joseph Engelberger","imageUrl":null,"correct":true},{"id":24,"optionText":"Heinrich Ernst","imageUrl":null,"correct":false}]},{"id":6,"questionText":"The PUMA robot, which became a standard in research and industry, was an acronym for:","imageUrl":null,"topicId":null,"options":[{"id":25,"optionText":"Programmable Universal Motion Actuator","imageUrl":null,"correct":false},{"id":26,"optionText":"Programmable Universal Machine for Assembly","imageUrl":null,"correct":true},{"id":27,"optionText":"Positional Universal Manipulator Arm","imageUrl":null,"correct":false},{"id":28,"optionText":"Powered Universal Machine for Automation","imageUrl":null,"correct":false}]},{"id":7,"questionText":"The major research focus in robotics during the 1980s shifted towards:","imageUrl":null,"topicId":null,"options":[{"id":29,"optionText":"Building larger and stronger robot arms.","imageUrl":null,"correct":false},{"id":30,"optionText":"Developing the first mobile robots.","imageUrl":null,"correct":false},{"id":31,"optionText":"Understanding the fundamental mathematics of robot dynamics and control.","imageUrl":null,"correct":true},{"id":32,"optionText":"Commercializing robots for home use.","imageUrl":null,"correct":false}]},{"id":8,"questionText":"What was the significance of the Robot Operating System (ROS) introduced in 2007?","imageUrl":null,"topicId":null,"options":[{"id":33,"optionText":"It was the first operating system that allowed robots to be controlled by voice.","imageUrl":null,"correct":false},{"id":34,"optionText":"It was a proprietary system developed by iRobot for the Roomba.","imageUrl":null,"correct":false},{"id":35,"optionText":"It provided a standardized, open-source software framework that accelerated research.","imageUrl":null,"correct":true},{"id":36,"optionText":"It was the first real-time operating system capable of controlling a humanoid robot.","imageUrl":null,"correct":false}]}]</script>
+</div>
+</div></main></div>
+    <script src="../../assets/js/quiz.js"></script>
+    
+    <script>
+function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('open');
+    document.querySelector('.sidebar-overlay').classList.toggle('open');
+    document.body.classList.toggle('sidebar-open');
+}
+</script>
+
+</body>
+</html>

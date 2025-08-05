@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Lab: Degrees of Freedom | Module 1</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body>
+    <header><h1><a href='../../index.html' style='color: #fff; text-decoration: none;'>Kinematics, Dynamic and Control of Robot</a></h1><button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button></header>
+    <div class='container'><aside class='sidebar'><nav class='sidebar-nav'><ul><li class='module-item active'><a href='../module-1/topic-2.html'>Module 1: Introduction To Robotics</a><ul class='topic-list'><li class='topic-item '><a href='topic-2.html'>Introduction to Robotics</a></li><li class='topic-item '><a href='topic-3.html'>Brief History of Robotics</a></li><li class='topic-item '><a href='topic-4.html'>Types of Robot</a></li><li class='topic-item '><a href='topic-5.html'>Degrees of Freedom (DOF))</a></li><li class='topic-item active'><a href='topic-6.html'>Interactive Lab: Degrees of Freedom</a></li></ul></li></ul></nav></aside><main class='main-content'><div class='topic-section' id='topic-6'><h1>Interactive Lab: Degrees of Freedom</h1><div class='topic-content'><p>This is an interactive tool for you to get a grasp on the concept of degrees of freedom.</p></div><div class="simulator-wrapper">
+    <div id="canvas-container"></div>
+    <div class="controls">
+        <h2>Select Scenario</h2>
+        <div><label><input type="radio" name="dof-mode" value="point-1d" checked> Point on a Line (1 DOF)</label></div>
+        <div><label><input type="radio" name="dof-mode" value="point-2d"> Point in a Plane (2 DOF)</label></div>
+        <div><label><input type="radio" name="dof-mode" value="body-2d"> Rigid Body in a Plane (3 DOF)</label></div>
+        <div id="rotate-control" style="display: none;"><label><input type="checkbox" id="rotate-mode-checkbox"> Rotate Mode</label></div>
+        <div id="info-box">
+            <h3 id="info-title">Point on a Line</h3>
+            <p id="info-text">You can only move the point along the horizontal (X) axis. This is <strong>1 Degree of Freedom</strong> (Translation in X).</p>
+        </div>
+    </div>
+</div>
+</div></main></div>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script><script src="../../assets/js/dof-simulator.js"></script>
+    <script>
+function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('open');
+    document.querySelector('.sidebar-overlay').classList.toggle('open');
+    document.body.classList.toggle('sidebar-open');
+}
+</script>
+
+</body>
+</html>

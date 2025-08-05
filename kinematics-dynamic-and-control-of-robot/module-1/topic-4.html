@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of Robot | Module 1</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body>
+    <header><h1><a href='../../index.html' style='color: #fff; text-decoration: none;'>Kinematics, Dynamic and Control of Robot</a></h1><button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button></header>
+    <div class='container'><aside class='sidebar'><nav class='sidebar-nav'><ul><li class='module-item active'><a href='../module-1/topic-2.html'>Module 1: Introduction To Robotics</a><ul class='topic-list'><li class='topic-item '><a href='topic-2.html'>Introduction to Robotics</a></li><li class='topic-item '><a href='topic-3.html'>Brief History of Robotics</a></li><li class='topic-item active'><a href='topic-4.html'>Types of Robot</a></li><li class='topic-item '><a href='topic-5.html'>Degrees of Freedom (DOF))</a></li><li class='topic-item '><a href='topic-6.html'>Interactive Lab: Degrees of Freedom</a></li></ul></li></ul></nav></aside><main class='main-content'><div class='topic-section' id='topic-4'><h1>Types of Robot</h1><div class='topic-content'><p><span class="selected">The field of robotics is incredibly diverse. We can categorize robots into broad types based on their physical structure and primary mode of interaction with the world.</span></p>
+<ul>
+<li>
+<p><strong><span class="selected">Manipulators (Robotic Arms):</span></strong><span class="selected"> These robots are typically fixed in place and use a series of links and joints to manipulate objects. They are the classic industrial robots and form the primary focus for the study of kinematics and dynamics in this course. Common subtypes include:</span></p>
+<ul>
+<li>
+<p><strong><span class="selected">Articulated Robot:</span></strong><span class="selected"> The most common type of industrial robot, featuring rotary joints (resembling a human arm, e.g., PUMA). These are often referred to by their joint configuration, such as a 6R robot for a 6-axis articulated arm.</span></p>
+</li>
+</ul>
+</li>
+</ul>
+<p style="padding-left: 80px;"><span class="selected"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/FANUC_welding_robot_reaching.jpg/500px-FANUC_welding_robot_reaching.jpg" alt="" width="300" height="225"></span></p>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li>
+<p><strong><span class="selected">SCARA Robot:</span></strong><span class="selected"> (Selective Compliance Assembly Robot Arm). Designed for high-speed, light-duty assembly tasks. It is compliant in the horizontal plane but rigid vertically.</span></p>
+</li>
+</ul>
+</li>
+</ul>
+<p style="padding-left: 80px;"><span class="selected"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/SCARA_robot_2R.png/500px-SCARA_robot_2R.png" alt="" width="300" height="288"></span></p>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li>
+<p><strong><span class="selected">Parallel Manipulator:</span></strong><span class="selected"> Characterized by closed-loop kinematic chains. The end-effector is connected to the base by several independent linkages. This design offers high rigidity, speed, and accuracy (e.g., the Delta robot).</span></p>
+<div class="image-container"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Robot_delta_FlexPicker_d%27ABB.png/800px-Robot_delta_FlexPicker_d%27ABB.png" alt="" width="220" height="279"><img src="https://upload.wikimedia.org/wikipedia/commons/5/56/DeltaRamki.gif" alt="" width="338" height="284"></div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li>
+<p><strong><span class="selected">Cartesian/Gantry Robot:</span></strong><span class="selected"> Uses three prismatic joints, with axes that are coincident with a Cartesian coordinate system. They are often large and used for pick-and-place or CNC machining.</span></p>
+</li>
+</ul>
+</li>
+</ul>
+<p style="padding-left: 80px;"><span class="selected"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Robot_Portico_tecno-840.jpg/500px-Robot_Portico_tecno-840.jpg" alt="" width="300" height="250"></span></p>
+<ul>
+<li>
+<p><strong><span class="selected">Mobile Robots:</span></strong><span class="selected"> These robots are capable of moving through their environment.</span></p>
+<ul>
+<li>
+<p><strong><span class="selected">Wheeled Mobile Robots (WMRs):</span></strong><span class="selected"> Use wheels for locomotion, which is highly efficient on prepared surfaces. Subtypes include differential drive, tricycle, and car-like (Ackermann) steering systems.</span></p>
+</li>
+</ul>
+</li>
+</ul>
+<p style="padding-left: 80px;"><span class="selected"><img src="../../assets/images/wmr_1754244447531.jpg" alt="" width="300" height="300"></span></p>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li>
+<p><strong><span class="selected">Legged Robots:</span></strong><span class="selected"> Use articulated limbs to walk, run, or climb, allowing them to traverse complex and unstructured terrain. They are classified by the number of legs (e.g., biped, quadruped, hexapod).</span></p>
+</li>
+</ul>
+</li>
+</ul>
+<p style="padding-left: 80px;"><span class="selected"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Legged_Squad_Support_System_robot_prototype.jpg/500px-Legged_Squad_Support_System_robot_prototype.jpg" alt="" width="300" height="199"></span></p>
+<ul>
+<li>
+<p><strong><span class="selected">Aerial Robots (Drones/UAVs):</span></strong><span class="selected"> These robots operate in three-dimensional space.</span></p>
+<ul>
+<li>
+<p><strong><span class="selected">Fixed-Wing UAVs:</span></strong><span class="selected"> Resemble traditional airplanes and are efficient for long-range surveillance and mapping.</span></p>
+</li>
+</ul>
+</li>
+</ul>
+<p style="padding-left: 80px;"><span class="selected"><img src="https://res.cloudinary.com/engineering-com/image/upload/w_640,h_640,c_limit,q_auto,f_auto/Drone_1_tlzq73.jpg" alt="" width="300" height="214"></span></p>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li>
+<p><strong><span class="selected">Multi-rotor UAVs:</span></strong><span class="selected"> Use multiple propellers for lift and control (e.g., quadcopters, hexacopters). They offer vertical takeoff and landing (VTOL) and hovering capabilities, making them ideal for inspection and photography.</span></p>
+</li>
+</ul>
+</li>
+</ul>
+<p style="padding-left: 80px;"><span class="selected"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Quadcopter_camera_drone_in_flight.jpg/500px-Quadcopter_camera_drone_in_flight.jpg" alt="" width="300" height="200"></span></p>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li>
+<p><strong><span class="selected">Flapping-Wing UAVs:</span></strong><span class="selected"> Bio-inspired robots that mimic the flight of birds or insects.</span></p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p><strong><span class="selected">Autonomous Underwater Vehicles (AUVs):</span></strong><span class="selected"> Un-tethered robots that operate underwater for tasks like oceanographic mapping, underwater infrastructure inspection, and scientific research.</span></p>
+</li>
+</ul>
+<p style="padding-left: 40px;"><span class="selected"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/MiniU.jpg/500px-MiniU.jpg" alt="" width="300" height="225"></span></p>
+<ul>
+<li>
+<p><strong><span class="selected">Humanoid Robots:</span></strong><span class="selected"> Robots designed to have a body structure resembling a human, including a torso, head, two arms, and two legs. They are a major research platform for studying bipedal locomotion, manipulation, and human-robot interaction (e.g., Honda's ASIMO, Boston Dynamics' Atlas).</span></p>
+</li>
+</ul></div><div class="quiz-container" data-topic-id="4" data-asset-path="../../assets/images/">
+    <h3>Test Your Knowledge</h3>
+    <div class="quiz-body"></div>
+    <script type="application/json" class="quiz-data">[{"id":9,"questionText":"A robot designed with high rigidity in the vertical direction but compliance in the horizontal plane, making it ideal for high-speed assembly, is known as a:","imageUrl":null,"topicId":null,"options":[{"id":37,"optionText":"Articulated Robot","imageUrl":null,"correct":false},{"id":38,"optionText":"Cartesian Robot","imageUrl":null,"correct":false},{"id":39,"optionText":"SCARA Robot","imageUrl":null,"correct":true},{"id":40,"optionText":"Parallel Manipulator","imageUrl":null,"correct":false}]},{"id":10,"questionText":"Which type of robot is characterized by closed-loop kinematic chains, offering high speed and accuracy for tasks like pick-and-place?","imageUrl":null,"topicId":null,"options":[{"id":41,"optionText":"Delta Robot (a type of Parallel Manipulator)","imageUrl":null,"correct":true},{"id":42,"optionText":"PUMA Robot (a type of Articulated Robot)","imageUrl":null,"correct":false},{"id":43,"optionText":"Legged Robot","imageUrl":null,"correct":false},{"id":44,"optionText":"Gantry Robot","imageUrl":null,"correct":false}]},{"id":11,"questionText":"What is the primary advantage of a legged robot compared to a wheeled mobile robot (WMR)?","imageUrl":null,"topicId":null,"options":[{"id":45,"optionText":"Higher energy efficiency on flat surfaces.","imageUrl":null,"correct":false},{"id":46,"optionText":"Ability to traverse complex and unstructured terrain.","imageUrl":null,"correct":true},{"id":47,"optionText":"Simpler mechanical design.","imageUrl":null,"correct":false},{"id":48,"optionText":"Higher top speed on roads.","imageUrl":null,"correct":false}]},{"id":12,"questionText":"A quadcopter is a subtype of which major robot category?","imageUrl":null,"topicId":null,"options":[{"id":49,"optionText":"Manipulators","imageUrl":null,"correct":false},{"id":50,"optionText":"Mobile Robots","imageUrl":null,"correct":false},{"id":51,"optionText":"Humanoid Robots","imageUrl":null,"correct":false},{"id":52,"optionText":"Aerial Robots","imageUrl":null,"correct":true}]}]</script>
+</div>
+</div></main></div>
+    <script src="../../assets/js/quiz.js"></script>
+    
+    <script>
+function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('open');
+    document.querySelector('.sidebar-overlay').classList.toggle('open');
+    document.body.classList.toggle('sidebar-open');
+}
+</script>
+
+</body>
+</html>
