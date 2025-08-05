@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Lab: 3D Degrees of Freedom | Module 1</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body>
+    <header><h1><a href='../../index.html' style='color: #fff; text-decoration: none;'>Kinematics, Dynamic and Control of Robot</a></h1><button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button></header>
+    <div class='container'><aside class='sidebar'><nav class='sidebar-nav'><ul><li class='module-item active'><a href='../module-1/topic-2.html'>Module 1: Introduction To Robotics</a><ul class='topic-list'><li class='topic-item '><a href='topic-2.html'>Introduction to Robotics</a></li><li class='topic-item '><a href='topic-3.html'>Brief History of Robotics</a></li><li class='topic-item '><a href='topic-4.html'>Types of Robot</a></li><li class='topic-item '><a href='topic-5.html'>Degrees of Freedom (DOF))</a></li><li class='topic-item '><a href='topic-6.html'>Interactive Lab: Degrees of Freedom</a></li><li class='topic-item active'><a href='topic-7.html'>Interactive Lab: 3D Degrees of Freedom</a></li></ul></li></ul></nav></aside><main class='main-content'><div class='topic-section' id='topic-7'><h1>Interactive Lab: 3D Degrees of Freedom</h1><div class='topic-content'><p>This is a tool to help you understand the concept of degrees of freedom of a rigid body in a 3D space.</p></div><div class="simulator-wrapper-3d">
+    <div id="canvas-container-3d"></div>
+    <div class="controls-3d">
+        <h2>Controls</h2>
+        <p class="controls-info">Use your mouse to rotate (left-click), pan (right-click), and zoom (scroll) the camera.</p>
+        <div class="control-group">
+            <h3>Translation (Position)</h3>
+            <label for="posX">X: <span id="posX-val">0</span></label>
+            <input type="range" id="posX" min="-100" max="100" value="0">
+            <label for="posY">Y: <span id="posY-val">0</span></label>
+            <input type="range" id="posY" min="-100" max="100" value="0">
+            <label for="posZ">Z: <span id="posZ-val">0</span></label>
+            <input type="range" id="posZ" min="-100" max="100" value="0">
+        </div>
+        <div class="control-group">
+            <h3>Rotation (Orientation)</h3>
+            <label for="rotX">Roll (X): <span id="rotX-val">0</span>°</label>
+            <input type="range" id="rotX" min="-180" max="180" value="0">
+            <label for="rotY">Pitch (Y): <span id="rotY-val">0</span>°</label>
+            <input type="range" id="rotY" min="-180" max="180" value="0">
+            <label for="rotZ">Yaw (Z): <span id="rotZ-val">0</span>°</label>
+            <input type="range" id="rotZ" min="-180" max="180" value="0">
+        </div>
+        <div id="info-box">
+            <h3>6 Degrees of Freedom</h3>
+        </div>
+    </div>
+</div>
+</div></main></div>
+    <script src="../../assets/js/quiz.js"></script>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+        }
+    }
+</script>
+<script type="module" src="../../assets/js/dof-3d-simulator.js"></script>
+
+    <script>
+function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('open');
+    document.querySelector('.sidebar-overlay').classList.toggle('open');
+    document.body.classList.toggle('sidebar-open');
+}
+</script>
+
+</body>
+</html>

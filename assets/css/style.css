@@ -3,7 +3,7 @@ body.sidebar-open { overflow: hidden; }
 header { background: #212529; color: #fff; padding: 1.25rem 1.5rem; text-align: center; border-bottom: 3px solid #0d6efd; position: relative; }
 header h1 { margin: 0; font-size: 1.75rem; font-weight: 600; }
 header a { color: #fff; text-decoration: none; }
-.container { display: flex; max-width: 1400px; margin: 0 auto; }
+.container { display: flex; max-width: 100%; }
 .sidebar { width: 260px; flex-shrink: 0; background: #fff; border-right: 1px solid #dee2e6; padding: 1.5rem; height: calc(100vh - 83px); overflow-y: auto; position: sticky; top: 0; }
 .main-content { flex-grow: 1; padding: 2.5rem; min-width: 0; }
 .main-content-full { width: 100%; max-width: 1200px; margin: 0 auto; padding: 2.5rem; box-sizing: border-box; }
@@ -45,6 +45,19 @@ header a { color: #fff; text-decoration: none; }
 @media (max-width: 992px) {
     .simulator-wrapper { flex-direction: column; }
     #canvas-container canvas { width: 100% !important; height: auto !important; }
+}
+.simulator-wrapper-3d { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-top: 2rem; }
+#canvas-container-3d { flex: 2; min-width: 400px; height: 500px; border: 1px solid #dee2e6; }
+.controls-3d { flex: 1; min-width: 280px; background-color: #f8f9fa; padding: 1.5rem; border-radius: 8px; }
+.controls-3d h2 { margin-top: 0; border-bottom: 2px solid #0d6efd; padding-bottom: 0.5rem; }
+.controls-3d h3 { margin-bottom: 0.5rem; margin-top: 1rem; }
+.controls-info { font-size: 0.9rem; color: #6c757d; margin-top: -0.5rem; }
+.control-group label { display: flex; justify-content: space-between; font-weight: 500; margin-bottom: 0.25rem; font-size: 0.9rem; }
+.control-group input[type="range"] { width: 100%; margin-bottom: 0.5rem; }
+@media (max-width: 1000px) {
+    .simulator-wrapper-3d { flex-direction: column; }
+    #canvas-container-3d { width: 100%; height: 400px; flex: auto; }
+    .controls-3d { width: auto; flex: auto; }
 }
 @media (max-width: 992px) {
     header { display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1001; }
