@@ -53,6 +53,7 @@ header a { color: #fff; text-decoration: none; }
     .sidebar.open { transform: translateX(280px); }
     .sidebar-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; }
     .sidebar-overlay.open { display: block; }
-    .main-content, .main-content-full { padding: 1.5rem 1rem; }
+    .main-content, .main-content-full { padding: 0.5rem; }
+    .topic-section { padding: 1.5rem; }
     .menu-toggle { display: block; background: #495057; color: white; border: none; padding: 0.5rem 0.8rem; border-radius: 5px; cursor: pointer; font-size: 1.2rem; }
 }
