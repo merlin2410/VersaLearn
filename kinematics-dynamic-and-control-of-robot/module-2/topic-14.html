@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controller | Module 2</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        startup: {
+          ready: () => {
+            MathJax.startup.defaultReady();
+            MathJax.startup.promise.then(() => {
+               MathJax.typesetPromise();
+            });
+          }
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body>
+    <header><h1><a href='../../index.html' style='color: #fff; text-decoration: none;'>Kinematics, Dynamic and Control of Robot</a></h1><button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button></header>
+    <div class='container'><aside class='sidebar'><nav class='sidebar-nav'><ul><li class='module-item '><a href='../module-1/topic-2.html'>Module 1: Introduction To Robotics</a></li><li class='module-item active'><a href='../module-2/topic-8.html'>Module 2: Robot Anatomy</a><ul class='topic-list'><li class='topic-item '><a href='topic-8.html'>Anatomy of a Robotic Manipulator</a></li><li class='topic-item '><a href='topic-9.html'>Links and Joints</a></li><li class='topic-item '><a href='topic-10.html'>Interactive Lab: Links and Joints</a></li><li class='topic-item '><a href='topic-11.html'>Interactive Lab: Kinematic Chains</a></li><li class='topic-item '><a href='topic-12.html'>Actuators</a></li><li class='topic-item '><a href='topic-13.html'>Sensors</a></li><li class='topic-item active'><a href='topic-14.html'>Controller</a></li><li class='topic-item '><a href='topic-15.html'>End Effectors</a></li></ul></li></ul></nav></aside><main class='main-content'><div class='topic-section' id='topic-14'><h1>Controller</h1><div class='topic-content'><p><span class="selected">The controller is the "brain" of the robot, a dedicated computer system that orchestrates the entire operation. It bridges the gap between the high-level task plan and the low-level physical motion of the manipulator. Its primary function is to execute a control law that ensures the robot accurately follows a desired trajectory.</span></p>
+<h2><span class="selected">The Control Loop</span></h2>
+<p><span class="selected">The fundamental operation of a robot controller is the </span><strong><span class="selected">feedback control loop</span></strong><span class="selected">, a cycle that typically repeats at a high frequency (often 1 kHz or higher).</span></p>
+<h3><strong><span class="selected">Sense</span></strong></h3>
+<p><span class="selected">The controller reads the current, actual state of the robot from its proprioceptive sensors (e.g., the angles of all joints from their encoders).</span></p>
+<h3><strong><span class="selected">Compare</span></strong></h3>
+<p><span class="selected">It compares this actual state to the desired state for that specific instant in time, as dictated by the pre-computed trajectory. The difference between the desired and actual state is the&nbsp;</span><strong><span class="selected">error</span></strong><span class="selected">.</span></p>
+<h3><strong><span class="selected">Act</span></strong></h3>
+<p><span class="selected">Based on the calculated error, the controller's&nbsp;</span><strong><span class="selected">control law</span></strong><span class="selected"> (a specific algorithm, such as a PID controller) computes the necessary torque or voltage command for each joint's actuator. This command is sent to the motor amplifiers, which drive the motors to move the robot in a way that minimizes the error.</span></p>
+<p><span class="selected">This continuous process of sensing, comparing, and correcting is what allows a robot to track a trajectory smoothly and accurately, even in the presence of disturbances like varying loads or friction.</span></p>
+<h2><span class="selected">Controller Architecture</span></h2>
+<p><span class="selected">A typical industrial robot controller is a complex piece of hardware and software with a hierarchical structure.</span></p>
+<h3><strong><span class="selected">Hardware</span></strong></h3>
+<p><span class="selected">The controller is housed in a cabinet that contains:</span></p>
+<h4><strong><span class="selected">Main Computer</span></strong></h4>
+<p><span class="selected">A powerful processor (or multiple processors) that runs the high-level control software, including trajectory planning, kinematics, and dynamics calculations.</span></p>
+<h4><strong><span class="selected">Memory</span></strong></h4>
+<p><span class="selected">Stores the robot's operating system, application programs, and configuration data.</span></p>
+<h4><strong><span class="selected">I/O (Input/Output) Boards</span></strong></h4>
+<p><span class="selected">Provide the interface to communicate with the robot's sensors, actuators, and external equipment (like safety systems or other machines).</span></p>
+<h4><strong><span class="selected">Motor Amplifiers (Drives)</span></strong></h4>
+<p><span class="selected">These are power electronics that take the low-voltage control signal from the main computer and convert it into the high-current power needed to drive the robot's motors. Each motor on the robot has a corresponding amplifier.</span></p>
+<h4><strong><span class="selected">Teach Pendant</span></strong></h4>
+<p><span class="selected">A handheld device with a screen and joystick that allows a human operator to program the robot, manually move it (a process called "jogging"), and monitor its status.</span></p>
+<h3><strong><span class="selected">Software</span></strong></h3>
+<p><span class="selected">The software architecture is also hierarchical, with different tasks operating at different rates.</span></p>
+<h4><strong><span class="selected">High-Level Control (Task Level)</span></strong></h4>
+<p><span class="selected">This level is responsible for user interaction and interpreting the robot program. It plans the overall task and generates the desired path for the end-effector in Cartesian space (e.g., "move in a straight line from point A to point B").</span></p>
+<h4><strong><span class="selected">Mid-Level Control (Trajectory Level)</span></strong></h4>
+<p><span class="selected">This layer takes the desired Cartesian path and transforms it into a time-sequenced trajectory of points. It then uses the robot's inverse kinematics model to calculate the corresponding sequence of desired joint angles, velocities, and accelerations for each point in time. For more advanced control, it may also use the robot's dynamic model to calculate the feedforward torques needed to achieve that motion.</span></p>
+<h4><strong><span class="selected">Low-Level Control (Servo Level)</span></strong></h4>
+<p><span class="selected">This is the fastest and most fundamental layer, running at the highest frequency (e.g., 1-10 kHz). It runs the actual joint control loops, taking the desired joint setpoints for each instant from the trajectory level and commanding the motor amplifiers to achieve them using a feedback control law like PID.</span></p></div><div class="quiz-container" data-topic-id="14" data-asset-path="../../assets/images/">
+    <h3>Test Your Knowledge</h3>
+    <div class="quiz-body"></div>
+    <script type="application/json" class="quiz-data">[{"id":27,"questionText":"In the robot controller's software hierarchy, which level is responsible for taking a desired Cartesian path (e.g., \"move in a straight line\") and using inverse kinematics to calculate the required sequence of joint angles?","imageUrl":null,"topicId":null,"options":[{"id":117,"optionText":"High-Level Control (Task Level)","imageUrl":null,"correct":false},{"id":118,"optionText":"Mid-Level Control (Trajectory Level)","imageUrl":null,"correct":true},{"id":119,"optionText":"Low-Level Control (Servo Level)","imageUrl":null,"correct":false},{"id":120,"optionText":"The Teach Pendant software","imageUrl":null,"correct":false}]},{"id":28,"questionText":"What is the fundamental purpose of the feedback control loop in a robot controller?","imageUrl":null,"topicId":null,"options":[{"id":121,"optionText":"To plan the most efficient path for the end-effector.","imageUrl":null,"correct":false},{"id":122,"optionText":"To continuously sense the robot's state, compare it to the desired state, and issue corrective commands.","imageUrl":null,"correct":true},{"id":123,"optionText":"To convert high-level programming languages into machine code.","imageUrl":null,"correct":false},{"id":124,"optionText":"To power the robot's motors and sensors.","imageUrl":null,"correct":false}]},{"id":29,"questionText":"Which hardware component of the controller takes the low-voltage command from the main computer and converts it into the high-current power needed to drive the robot's motors?","imageUrl":null,"topicId":null,"options":[{"id":125,"optionText":"The I/O Board","imageUrl":null,"correct":false},{"id":126,"optionText":"The Teach Pendant","imageUrl":null,"correct":false},{"id":127,"optionText":"The Main Computer's processor","imageUrl":null,"correct":false},{"id":128,"optionText":"The Motor Amplifiers (Drives)","imageUrl":null,"correct":true}]},{"id":30,"questionText":"The \"error\" signal, which is critical for feedback control, is defined as:","imageUrl":null,"topicId":null,"options":[{"id":129,"optionText":"The difference between the desired state and the actual measured state.","imageUrl":null,"correct":true},{"id":130,"optionText":"The torque command sent to a motor.","imageUrl":null,"correct":false},{"id":131,"optionText":"A syntax mistake in the robot's program.","imageUrl":null,"correct":false},{"id":132,"optionText":"The physical distance between the robot and a target object.","imageUrl":null,"correct":false}]}]</script>
+</div>
+</div></main></div>
+    <script src="../../assets/js/quiz.js"></script>
+    
+    <script>
+function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('open');
+    document.querySelector('.sidebar-overlay').classList.toggle('open');
+    document.body.classList.toggle('sidebar-open');
+}
+</script>
+
+</body>
+</html>

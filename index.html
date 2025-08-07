@@ -8,8 +8,16 @@
     <script>
       MathJax = {
         tex: {
-          inlineMath: [['\\(', '\\)']],
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
           displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        startup: {
+          ready: () => {
+            MathJax.startup.defaultReady();
+            MathJax.startup.promise.then(() => {
+               MathJax.typesetPromise();
+            });
+          }
         }
       };
     </script>

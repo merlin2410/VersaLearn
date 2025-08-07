@@ -8,8 +8,16 @@
     <script>
       MathJax = {
         tex: {
-          inlineMath: [['\\(', '\\)']],
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
           displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        startup: {
+          ready: () => {
+            MathJax.startup.defaultReady();
+            MathJax.startup.promise.then(() => {
+               MathJax.typesetPromise();
+            });
+          }
         }
       };
     </script>
@@ -17,7 +25,7 @@
 </head>
 <body>
     <header><h1><a href='../../index.html' style='color: #fff; text-decoration: none;'>Kinematics, Dynamic and Control of Robot</a></h1><button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button></header>
-    <div class='container'><aside class='sidebar'><nav class='sidebar-nav'><ul><li class='module-item '><a href='../module-1/topic-2.html'>Module 1: Introduction To Robotics</a></li><li class='module-item active'><a href='../module-2/topic-8.html'>Module 2: Robot Anatomy</a><ul class='topic-list'><li class='topic-item '><a href='topic-8.html'>Anatomy of a Robotic Manipulator</a></li><li class='topic-item active'><a href='topic-9.html'>Links and Joints</a></li><li class='topic-item '><a href='topic-10.html'>Interactive Lab: Links and Joints</a></li><li class='topic-item '><a href='topic-11.html'>Interactive Lab: Kinematic Chains</a></li></ul></li></ul></nav></aside><main class='main-content'><div class='topic-section' id='topic-9'><h1>Links and Joints</h1><div class='topic-content'><p><span class="selected">The core structure of a manipulator is its </span><strong><span class="selected">kinematic chain</span></strong><span class="selected">, an assembly of rigid bodies (</span><strong><span class="selected">links</span></strong><span class="selected">) connected by articulations (</span><strong><span class="selected">joints</span></strong><span class="selected">).</span></p>
+    <div class='container'><aside class='sidebar'><nav class='sidebar-nav'><ul><li class='module-item '><a href='../module-1/topic-2.html'>Module 1: Introduction To Robotics</a></li><li class='module-item active'><a href='../module-2/topic-8.html'>Module 2: Robot Anatomy</a><ul class='topic-list'><li class='topic-item '><a href='topic-8.html'>Anatomy of a Robotic Manipulator</a></li><li class='topic-item active'><a href='topic-9.html'>Links and Joints</a></li><li class='topic-item '><a href='topic-10.html'>Interactive Lab: Links and Joints</a></li><li class='topic-item '><a href='topic-11.html'>Interactive Lab: Kinematic Chains</a></li><li class='topic-item '><a href='topic-12.html'>Actuators</a></li><li class='topic-item '><a href='topic-13.html'>Sensors</a></li><li class='topic-item '><a href='topic-14.html'>Controller</a></li><li class='topic-item '><a href='topic-15.html'>End Effectors</a></li></ul></li></ul></nav></aside><main class='main-content'><div class='topic-section' id='topic-9'><h1>Links and Joints</h1><div class='topic-content'><p><span class="selected">The core structure of a manipulator is its </span><strong><span class="selected">kinematic chain</span></strong><span class="selected">, an assembly of rigid bodies (</span><strong><span class="selected">links</span></strong><span class="selected">) connected by articulations (</span><strong><span class="selected">joints</span></strong><span class="selected">).</span></p>
 <h2><strong><span class="selected">Links</span></strong></h2>
 <p><span class="selected">These are the rigid structural members of the robot that connect the joints. For the purpose of kinematic analysis, we often model them as simple lines of a fixed length connecting joint axes. In reality, they are complex structures, meticulously designed for high strength, high stiffness, and low inertia to allow for fast and precise movements. The first link in the chain, which is fixed to a stationary surface, is called the&nbsp;</span><strong><span class="selected">base link</span></strong><span class="selected">.</span></p>
 <h2><strong><span class="selected">Joints</span></strong></h2>
@@ -36,7 +44,12 @@
 <h3><strong><span class="selected">Closed Kinematic Chain (Parallel Manipulators)</span></strong></h3>
 <p><span class="selected"><img src="../../assets/images/mceclip1_1754416822990.png" width="300" height="289"></span></p>
 <p><span class="selected">In this structure, the kinematic chain forms one or more closed loops. This means there are multiple kinematic paths from the base to the end-effector. Manipulators with this structure are called </span><strong><span class="selected">parallel manipulators</span></strong><span class="selected"> (e.g., the Delta robot). Closed chains generally offer higher stiffness, greater payload capacity for their size, and potentially higher accuracy, but often at the cost of a smaller, more complex workspace and more intricate kinematic analysis.</span></p>
-<p>&nbsp;</p></div></div></main></div>
+<p>&nbsp;</p></div><div class="quiz-container" data-topic-id="9" data-asset-path="../../assets/images/">
+    <h3>Test Your Knowledge</h3>
+    <div class="quiz-body"></div>
+    <script type="application/json" class="quiz-data">[{"id":13,"questionText":"In a serial manipulator, what is the term for the first link in the kinematic chain that is fixed to a stationary surface?","imageUrl":null,"topicId":null,"options":[{"id":53,"optionText":"End Link","imageUrl":null,"correct":false},{"id":54,"optionText":"Base Link","imageUrl":null,"correct":true},{"id":55,"optionText":"Prismatic Link","imageUrl":null,"correct":false},{"id":56,"optionText":"Revolute Link","imageUrl":null,"correct":false}]},{"id":14,"questionText":"A joint that allows for linear sliding motion between two links provides one degree of freedom and is known as a:","imageUrl":null,"topicId":null,"options":[{"id":57,"optionText":"Revolute (R) Joint","imageUrl":null,"correct":false},{"id":58,"optionText":"Universal Joint","imageUrl":null,"correct":false},{"id":59,"optionText":"Prismatic (P) Joint","imageUrl":null,"correct":true},{"id":60,"optionText":"Spherical Joint","imageUrl":null,"correct":false}]},{"id":15,"questionText":"Which of the following is a primary characteristic of a parallel manipulator (closed kinematic chain) when compared to a serial manipulator?","imageUrl":null,"topicId":null,"options":[{"id":61,"optionText":"A larger and less complex workspace.","imageUrl":null,"correct":false},{"id":62,"optionText":"A single, un-branched chain of links.","imageUrl":null,"correct":false},{"id":63,"optionText":"Lower stiffness and payload capacity.","imageUrl":null,"correct":false},{"id":64,"optionText":"Higher rigidity and accuracy.","imageUrl":null,"correct":true}]},{"id":16,"questionText":"A standard 6-axis industrial robot arm used for welding is an example of a:","imageUrl":null,"topicId":null,"options":[{"id":69,"optionText":"Parallel Manipulator","imageUrl":null,"correct":false},{"id":70,"optionText":"Closed Kinematic Chain","imageUrl":null,"correct":false},{"id":71,"optionText":"Serial Manipulator","imageUrl":null,"correct":true},{"id":72,"optionText":"Gantry Robot","imageUrl":null,"correct":false}]}]</script>
+</div>
+</div></main></div>
     <script src="../../assets/js/quiz.js"></script>
     
     <script>

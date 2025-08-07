@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actuators | Module 2</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        startup: {
+          ready: () => {
+            MathJax.startup.defaultReady();
+            MathJax.startup.promise.then(() => {
+               MathJax.typesetPromise();
+            });
+          }
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body>
+    <header><h1><a href='../../index.html' style='color: #fff; text-decoration: none;'>Kinematics, Dynamic and Control of Robot</a></h1><button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button></header>
+    <div class='container'><aside class='sidebar'><nav class='sidebar-nav'><ul><li class='module-item '><a href='../module-1/topic-2.html'>Module 1: Introduction To Robotics</a></li><li class='module-item active'><a href='../module-2/topic-8.html'>Module 2: Robot Anatomy</a><ul class='topic-list'><li class='topic-item '><a href='topic-8.html'>Anatomy of a Robotic Manipulator</a></li><li class='topic-item '><a href='topic-9.html'>Links and Joints</a></li><li class='topic-item '><a href='topic-10.html'>Interactive Lab: Links and Joints</a></li><li class='topic-item '><a href='topic-11.html'>Interactive Lab: Kinematic Chains</a></li><li class='topic-item active'><a href='topic-12.html'>Actuators</a></li><li class='topic-item '><a href='topic-13.html'>Sensors</a></li><li class='topic-item '><a href='topic-14.html'>Controller</a></li><li class='topic-item '><a href='topic-15.html'>End Effectors</a></li></ul></li></ul></nav></aside><main class='main-content'><div class='topic-section' id='topic-12'><h1>Actuators</h1><div class='topic-content'><p><span class="selected">Actuators are the "muscles" of the robot. They are the devices that convert a power source (usually electrical) into physical motion, generating the forces and torques that drive the joints.</span></p>
+<h2><strong><span class="selected">Electric Actuators</span></strong></h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Compact_and_electric_valve_actuator.jpg/500px-Compact_and_electric_valve_actuator.jpg" alt="" width="300" height="225"></p>
+<p><span class="selected">The most common type in modern robotics due to their precision, reliability, and ease of control.</span></p>
+<h3><em><span class="selected">DC Servo Motors:</span></em> </h3>
+<p><span class="selected">The workhorse of high-performance robotics. They provide precise, continuous control over position, velocity, and torque.</span></p>
+<h3><em><span class="selected">Stepper Motors:</span></em> </h3>
+<p><span class="selected">Move in discrete angular steps, which allows for simple open-loop control without requiring a feedback sensor. They are generally used in lower-cost, lower-performance applications.</span></p>
+<h3><em><span class="selected">Direct-Drive Motors:</span></em> </h3>
+<p><span class="selected">High-torque motors that connect directly to the joint without a gearbox. This eliminates backlash and friction from gearing, leading to very high accuracy and speed.</span></p>
+<h2><strong><span class="selected">Hydraulic Actuators</span></strong></h2>
+<p><img src="../../assets/images/hydraulic actuator_1754473952229.jpg" alt="" width="300" height="300"></p>
+<p><span class="selected">Use pressurized fluid (oil) to generate immense force, making them ideal for very large robots requiring high payload capacity.</span></p>
+<h2><strong><span class="selected">Pneumatic Actuators</span></strong><span class="selected">&nbsp;</span></h2>
+<p><span class="selected"><img src="../../assets/images/pneumatic actuator_1754474414746.jpg" alt="" width="300" height="300"></span></p>
+<p><span class="selected">Use compressed air to generate motion. They are inexpensive and fast, making them suitable for simple, rapid pick-and-place tasks.</span></p></div><div class="quiz-container" data-topic-id="12" data-asset-path="../../assets/images/">
+    <h3>Test Your Knowledge</h3>
+    <div class="quiz-body"></div>
+    <script type="application/json" class="quiz-data">[{"id":17,"questionText":"What is the primary function of an actuator in a robotic manipulator?","imageUrl":null,"topicId":null,"options":[{"id":73,"optionText":"To sense the environment and provide feedback.","imageUrl":null,"correct":false},{"id":74,"optionText":"To process program instructions and plan trajectories.","imageUrl":null,"correct":false},{"id":75,"optionText":"To convert energy into physical motion to drive the joints.","imageUrl":null,"correct":true},{"id":76,"optionText":"To connect two rigid links together structurally.","imageUrl":null,"correct":false}]},{"id":18,"questionText":"Which type of actuator is the most common in modern robotics due to its precision, reliability, and ease of control?","imageUrl":null,"topicId":null,"options":[{"id":77,"optionText":"Hydraulic Actuators","imageUrl":null,"correct":false},{"id":78,"optionText":"Pneumatic Actuators","imageUrl":null,"correct":false},{"id":79,"optionText":"Electric Actuators","imageUrl":null,"correct":true},{"id":80,"optionText":"Mechanical Spring Actuators","imageUrl":null,"correct":false}]},{"id":19,"questionText":"For a very large robot designed to lift extremely heavy objects, which actuator type would be the most suitable choice due to its ability to generate immense force?","imageUrl":null,"topicId":null,"options":[{"id":81,"optionText":"DC Servo Motors","imageUrl":null,"correct":false},{"id":82,"optionText":"Hydraulic Actuators","imageUrl":null,"correct":true},{"id":83,"optionText":"Pneumatic Actuators","imageUrl":null,"correct":false},{"id":84,"optionText":"Stepper Motors","imageUrl":null,"correct":false}]},{"id":20,"questionText":"For a simple, low-cost, and fast pick-and-place application where precise positioning is less critical, which actuator type is often used?","imageUrl":null,"topicId":null,"options":[{"id":85,"optionText":"Direct-Drive Motors","imageUrl":null,"correct":false},{"id":86,"optionText":"Hydraulic Actuators","imageUrl":null,"correct":false},{"id":87,"optionText":"Pneumatic Actuators","imageUrl":null,"correct":true},{"id":88,"optionText":"DC Servo Motors","imageUrl":null,"correct":false}]},{"id":21,"questionText":"What is a key difference between a DC Servo Motor and a Stepper Motor?","imageUrl":null,"topicId":null,"options":[{"id":89,"optionText":"Servo motors are hydraulic, while stepper motors are electric.","imageUrl":null,"correct":false},{"id":90,"optionText":"Servo motors provide continuous control, while stepper motors move in discrete steps.","imageUrl":null,"correct":true},{"id":91,"optionText":"Servo motors are only used for prismatic joints, while stepper motors are for revolute joints.","imageUrl":null,"correct":false},{"id":92,"optionText":"Servo motors are less precise than stepper motors.","imageUrl":null,"correct":false}]},{"id":22,"questionText":"What is the primary advantage of using a Direct-Drive motor in a robot joint?","imageUrl":null,"topicId":null,"options":[{"id":93,"optionText":"It is the least expensive type of electric motor.","imageUrl":null,"correct":false},{"id":94,"optionText":"It eliminates backlash and friction from a gearbox.","imageUrl":null,"correct":true},{"id":95,"optionText":"It operates on compressed air for faster motion.","imageUrl":null,"correct":false},{"id":96,"optionText":"It requires less complex control software than a DC servo motor.","imageUrl":null,"correct":false}]}]</script>
+</div>
+</div></main></div>
+    <script src="../../assets/js/quiz.js"></script>
+    
+    <script>
+function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('open');
+    document.querySelector('.sidebar-overlay').classList.toggle('open');
+    document.body.classList.toggle('sidebar-open');
+}
+</script>
+
+</body>
+</html>

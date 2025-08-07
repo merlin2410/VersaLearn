@@ -24,6 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         quizBody.innerHTML = quizHtml;
 
+        if (window.MathJax) {
+            window.MathJax.typesetPromise([quizBody]);
+        }
+
         quizBody.querySelectorAll('.check-btn').forEach(button => {
             button.addEventListener('click', (e) => {
                 const qIndex = parseInt(e.target.dataset.questionIndex, 10);

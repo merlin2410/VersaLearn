@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensors | Module 2</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        startup: {
+          ready: () => {
+            MathJax.startup.defaultReady();
+            MathJax.startup.promise.then(() => {
+               MathJax.typesetPromise();
+            });
+          }
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body>
+    <header><h1><a href='../../index.html' style='color: #fff; text-decoration: none;'>Kinematics, Dynamic and Control of Robot</a></h1><button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button></header>
+    <div class='container'><aside class='sidebar'><nav class='sidebar-nav'><ul><li class='module-item '><a href='../module-1/topic-2.html'>Module 1: Introduction To Robotics</a></li><li class='module-item active'><a href='../module-2/topic-8.html'>Module 2: Robot Anatomy</a><ul class='topic-list'><li class='topic-item '><a href='topic-8.html'>Anatomy of a Robotic Manipulator</a></li><li class='topic-item '><a href='topic-9.html'>Links and Joints</a></li><li class='topic-item '><a href='topic-10.html'>Interactive Lab: Links and Joints</a></li><li class='topic-item '><a href='topic-11.html'>Interactive Lab: Kinematic Chains</a></li><li class='topic-item '><a href='topic-12.html'>Actuators</a></li><li class='topic-item active'><a href='topic-13.html'>Sensors</a></li><li class='topic-item '><a href='topic-14.html'>Controller</a></li><li class='topic-item '><a href='topic-15.html'>End Effectors</a></li></ul></li></ul></nav></aside><main class='main-content'><div class='topic-section' id='topic-13'><h1>Sensors</h1><div class='topic-content'><p><span class="selected">Sensors provide the feedback necessary for the robot to understand its own state and interact with its environment. They are the robot's "senses."</span></p>
+<h2><strong><span class="selected">Proprioceptive Sensors (Internal)</span></strong></h2>
+<p><span class="selected">Monitor the internal state of the robot.</span></p>
+<h3><em><span class="selected">Joint Position Sensors:</span></em> </h3>
+<p><span class="selected">Absolutely crucial for closed-loop control.&nbsp;</span><strong><span class="selected">Encoders</span></strong><span class="selected"> (optical or magnetic) are the most common type, measuring the angular position of a motor shaft or joint with high precision.</span></p>
+<h3><em><span class="selected">Joint Velocity Sensors:</span></em> </h3>
+<p><span class="selected">Can be derived by differentiating the position signal from an encoder, or measured directly using a&nbsp;</span><strong><span class="selected">tachometer</span></strong><span class="selected">.</span></p>
+<h2><strong><span class="selected">Exteroceptive Sensors (External)</span></strong></h2>
+<p><span class="selected">Gather information about the robot's environment.</span></p>
+<h3><em><span class="selected">Vision Systems</span></em><span class="selected">&nbsp;</span></h3>
+<p><span class="selected">Cameras (2D or 3D/depth) provide rich information for tasks like object recognition, inspection, and guidance.</span></p>
+<h3><em><span class="selected">Force/Torque Sensors</span></em><span class="selected">&nbsp;</span></h3>
+<p><span class="selected">Typically mounted at the robot's wrist, these sensors measure the forces and torques generated during interaction with an object. They are essential for tasks requiring delicate force control, such as assembly, grinding, or polishing.</span></p></div><div class="quiz-container" data-topic-id="13" data-asset-path="../../assets/images/">
+    <h3>Test Your Knowledge</h3>
+    <div class="quiz-body"></div>
+    <script type="application/json" class="quiz-data">[{"id":23,"questionText":"Sensors that monitor the internal state of the robot, such as joint angles and velocities, are known as:","imageUrl":null,"topicId":null,"options":[{"id":97,"optionText":"Exteroceptive Sensors","imageUrl":null,"correct":false},{"id":98,"optionText":"Proprioceptive Sensors","imageUrl":null,"correct":true},{"id":99,"optionText":"Proximity Sensors","imageUrl":null,"correct":false},{"id":100,"optionText":"Vision Systems","imageUrl":null,"correct":false}]},{"id":24,"questionText":"What is the most common type of sensor used for the crucial task of measuring the precise angular position of a robot's joints for feedback control?","imageUrl":null,"topicId":null,"options":[{"id":101,"optionText":"Tachometer","imageUrl":null,"correct":false},{"id":102,"optionText":"Force/Torque Sensor","imageUrl":null,"correct":false},{"id":103,"optionText":"Camera","imageUrl":null,"correct":false},{"id":104,"optionText":"Encoder","imageUrl":null,"correct":true}]},{"id":25,"questionText":"A robot performing a delicate assembly task that requires it to push a part with a specific, gentle force would most likely rely on which type of sensor?","imageUrl":null,"topicId":null,"options":[{"id":109,"optionText":"A Joint Position Encoder","imageUrl":null,"correct":false},{"id":110,"optionText":"A Vision System","imageUrl":null,"correct":false},{"id":111,"optionText":"A Force/Torque Sensor","imageUrl":null,"correct":true},{"id":112,"optionText":"A Tachometer","imageUrl":null,"correct":false}]},{"id":26,"questionText":"Which of the following is an example of an exteroceptive sensor?","imageUrl":null,"topicId":null,"options":[{"id":113,"optionText":"An optical encoder on a motor shaft.","imageUrl":null,"correct":false},{"id":114,"optionText":"A camera providing an image of the robot's workspace.","imageUrl":null,"correct":true},{"id":115,"optionText":"A resolver measuring a joint's angle.","imageUrl":null,"correct":false},{"id":116,"optionText":"A tachometer measuring a joint's velocity.","imageUrl":null,"correct":false}]}]</script>
+</div>
+</div></main></div>
+    <script src="../../assets/js/quiz.js"></script>
+    
+    <script>
+function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('open');
+    document.querySelector('.sidebar-overlay').classList.toggle('open');
+    document.body.classList.toggle('sidebar-open');
+}
+</script>
+
+</body>
+</html>

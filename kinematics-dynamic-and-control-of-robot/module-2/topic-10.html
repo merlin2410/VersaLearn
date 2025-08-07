@@ -8,8 +8,16 @@
     <script>
       MathJax = {
         tex: {
-          inlineMath: [['\\(', '\\)']],
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
           displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        startup: {
+          ready: () => {
+            MathJax.startup.defaultReady();
+            MathJax.startup.promise.then(() => {
+               MathJax.typesetPromise();
+            });
+          }
         }
       };
     </script>
@@ -17,7 +25,7 @@
 </head>
 <body>
     <header><h1><a href='../../index.html' style='color: #fff; text-decoration: none;'>Kinematics, Dynamic and Control of Robot</a></h1><button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button></header>
-    <div class='container'><aside class='sidebar'><nav class='sidebar-nav'><ul><li class='module-item '><a href='../module-1/topic-2.html'>Module 1: Introduction To Robotics</a></li><li class='module-item active'><a href='../module-2/topic-8.html'>Module 2: Robot Anatomy</a><ul class='topic-list'><li class='topic-item '><a href='topic-8.html'>Anatomy of a Robotic Manipulator</a></li><li class='topic-item '><a href='topic-9.html'>Links and Joints</a></li><li class='topic-item active'><a href='topic-10.html'>Interactive Lab: Links and Joints</a></li><li class='topic-item '><a href='topic-11.html'>Interactive Lab: Kinematic Chains</a></li></ul></li></ul></nav></aside><main class='main-content'><div class='topic-section' id='topic-10'><h1>Interactive Lab: Links and Joints</h1><div class='topic-content'><p>Experiment with links and joints.</p></div><div class="simulator-wrapper-links">
+    <div class='container'><aside class='sidebar'><nav class='sidebar-nav'><ul><li class='module-item '><a href='../module-1/topic-2.html'>Module 1: Introduction To Robotics</a></li><li class='module-item active'><a href='../module-2/topic-8.html'>Module 2: Robot Anatomy</a><ul class='topic-list'><li class='topic-item '><a href='topic-8.html'>Anatomy of a Robotic Manipulator</a></li><li class='topic-item '><a href='topic-9.html'>Links and Joints</a></li><li class='topic-item active'><a href='topic-10.html'>Interactive Lab: Links and Joints</a></li><li class='topic-item '><a href='topic-11.html'>Interactive Lab: Kinematic Chains</a></li><li class='topic-item '><a href='topic-12.html'>Actuators</a></li><li class='topic-item '><a href='topic-13.html'>Sensors</a></li><li class='topic-item '><a href='topic-14.html'>Controller</a></li><li class='topic-item '><a href='topic-15.html'>End Effectors</a></li></ul></li></ul></nav></aside><main class='main-content'><div class='topic-section' id='topic-10'><h1>Interactive Lab: Links and Joints</h1><div class='topic-content'><p>Experiment with links and joints.</p></div><div class="simulator-wrapper-links">
     <div id="canvas-container-links"></div>
     <div class="controls-links">
         <h2>Select Joint Type</h2>
