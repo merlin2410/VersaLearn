@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number of Axes (Degrees of Freedom) | Module 4</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        startup: {
+          ready: () => {
+            MathJax.startup.defaultReady();
+            MathJax.startup.promise.then(() => {
+               MathJax.typesetPromise();
+            });
+          }
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body>
+    <header><h1><a href='../../index.html' style='color: #fff; text-decoration: none;'>Kinematics, Dynamic and Control of Robot</a></h1><button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button></header>
+    <div class='container'><aside class='sidebar'><nav class='sidebar-nav'><ul><li class='module-item '><a href='../module-1/topic-2.html'>Module 1: Introduction To Robotics</a></li><li class='module-item '><a href='../module-2/topic-8.html'>Module 2: Robot Anatomy</a></li><li class='module-item '><a href='../module-3/topic-16.html'>Module 3: Degrees of Freedom</a></li><li class='module-item active'><a href='../module-4/topic-19.html'>Module 4: Robot Specifications</a><ul class='topic-list'><li class='topic-item '><a href='topic-19.html'>Robot Selection for an Application</a></li><li class='topic-item active'><a href='topic-20.html'>Number of Axes (Degrees of Freedom)</a></li></ul></li></ul></nav></aside><main class='main-content'><div class='topic-section' id='topic-20'><h1>Number of Axes (Degrees of Freedom)</h1><div class='topic-content'><p><span class="selected">The number of axes, or degrees of freedom (DOF), determines a robot's flexibility and dexterity. Each axis is a joint that provides an additional degree of freedom.</span></p>
+<h2><strong><span class="selected">Major Axes (Axes 1-3)</span></strong></h2>
+<p><span class="selected">These are the first three joints, starting from the base. Their primary function is to position the robot's wrist assembly within the work envelope. They are the main determinants of the robot's reach and overall workspace shape. For example, a 3-axis Cartesian robot can position its end-effector anywhere within its rectangular workspace, but it cannot change the tool's orientation.</span></p>
+<h2><strong><span class="selected">Minor Axes (Axes 4-6)</span></strong></h2>
+<p><span class="selected">These are the wrist joints. Their function is to orient the end-effector. To achieve any arbitrary orientation in 3D space (e.g., pitch, yaw, and roll), a three-axis wrist is required. A&nbsp;</span><strong><span class="selected">6-axis robot</span></strong><span class="selected"> (3 major + 3 minor axes) is the standard for general-purpose applications because its 6 DOF perfectly match the 6 DOF of an unconstrained rigid body in space (3 for position, 3 for orientation). This allows it to place its end-effector in any position and orientation within its dexterous workspace, which is essential for complex tasks like welding a curved seam or assembling parts at odd angles.</span></p>
+<h2><strong><span class="selected">Redundant Axes (Axes 7+)</span></strong></h2>
+<p><span class="selected">A robot with more than six axes is considered&nbsp;</span><strong><span class="selected">redundant</span></strong><span class="selected">. This extra flexibility does not increase the robot's ability to reach a point with a given orientation, but it provides multiple arm configurations to achieve the same end-effector pose. This is extremely useful for maneuvering around obstacles in a cluttered environment or avoiding </span><strong><span class="selected">singular configurations</span></strong><span class="selected"> (positions where the robot loses one or more degrees of freedom and its dexterity is compromised).</span></p></div></div></main></div>
+    <script src="../../assets/js/quiz.js"></script>
+    
+    <script>
+function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('open');
+    document.querySelector('.sidebar-overlay').classList.toggle('open');
+    document.body.classList.toggle('sidebar-open');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Lab: Common Joint Types | Module 3</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        startup: {
+          ready: () => {
+            MathJax.startup.defaultReady();
+            MathJax.startup.promise.then(() => {
+               MathJax.typesetPromise();
+            });
+          }
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body>
+    <header><h1><a href='../../index.html' style='color: #fff; text-decoration: none;'>Kinematics, Dynamic and Control of Robot</a></h1><button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button></header>
+    <div class='container'><aside class='sidebar'><nav class='sidebar-nav'><ul><li class='module-item '><a href='../module-1/topic-2.html'>Module 1: Introduction To Robotics</a></li><li class='module-item '><a href='../module-2/topic-8.html'>Module 2: Robot Anatomy</a></li><li class='module-item active'><a href='../module-3/topic-16.html'>Module 3: Degrees of Freedom</a><ul class='topic-list'><li class='topic-item '><a href='topic-16.html'>What are Degrees of Freedom?</a></li><li class='topic-item '><a href='topic-17.html'>Kinematic Pairs (Joints) and Constraints</a></li><li class='topic-item active'><a href='topic-18.html'>Interactive Lab: Common Joint Types</a></li></ul></li><li class='module-item '><a href='../module-4/topic-19.html'>Module 4: Robot Specifications</a></li></ul></nav></aside><main class='main-content'><div class='topic-section' id='topic-18'><h1>Interactive Lab: Common Joint Types</h1><div class='topic-content'><p>Experiment with different types of joints.</p></div><div class="simulator-wrapper-3d">
+    <div id="canvas-container-joints"></div>
+    <div class="controls-3d">
+        <h2>Select Joint Type</h2>
+        <div class="joint-selection">
+            <input type="radio" id="revolute" name="joint-type" value="R" checked><label for="revolute">Revolute (R)</label>
+            <input type="radio" id="prismatic" name="joint-type" value="P"><label for="prismatic">Prismatic (P)</label>
+            <input type="radio" id="cylindrical" name="joint-type" value="C"><label for="cylindrical">Cylindrical (C)</label>
+            <input type="radio" id="spherical" name="joint-type" value="S"><label for="spherical">Spherical (S)</label>
+            <input type="radio" id="screw" name="joint-type" value="H"><label for="screw">Screw (H)</label>
+            <input type="radio" id="planar" name="joint-type" value="E"><label for="planar">Planar (E)</label>
+        </div>
+        <div class="slider-controls">
+            <div class="slider-control" id="slider-ty"><label for="ty"><span>Translate Y</span><span id="ty-val">0</span></label><input type="range" id="ty" min="-80" max="80" value="0"></div>
+            <div class="slider-control" id="slider-tx"><label for="tx"><span>Translate X</span><span id="tx-val">0</span></label><input type="range" id="tx" min="-80" max="80" value="0"></div>
+            <div class="slider-control" id="slider-tz"><label for="tz"><span>Translate Z</span><span id="tz-val">0</span></label><input type="range" id="tz" min="-80" max="80" value="0"></div>
+            <div class="slider-control" id="slider-ry"><label for="ry"><span>Rotate Y (Yaw)</span><span id="ry-val">0°</span></label><input type="range" id="ry" min="-180" max="180" value="0"></div>
+            <div class="slider-control" id="slider-rx"><label for="rx"><span>Rotate X (Roll)</span><span id="rx-val">0°</span></label><input type="range" id="rx" min="-180" max="180" value="0"></div>
+            <div class="slider-control" id="slider-rz"><label for="rz"><span>Rotate Z (Pitch)</span><span id="rz-val">0°</span></label><input type="range" id="rz" min="-180" max="180" value="0"></div>
+        </div>
+        <div id="info-box">
+            <h3 id="info-title">Revolute Joint</h3>
+            <p id="info-text">Allows rotation about one axis. <strong>DOF: 1</strong>, Constraints: 5.</p>
+        </div>
+    </div>
+</div>
+</div></main></div>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+    // This creates a THREE object on the window, which the module script can access.
+    window.THREE = THREE;
+</script>
+<script type="module" src="../../assets/js/joint-types-simulator.js"></script>
+
+    <script>
+function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('open');
+    document.querySelector('.sidebar-overlay').classList.toggle('open');
+    document.body.classList.toggle('sidebar-open');
+}
+</script>
+
+</body>
+</html>

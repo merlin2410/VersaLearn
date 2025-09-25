@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Selection for an Application | Module 4</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        startup: {
+          ready: () => {
+            MathJax.startup.defaultReady();
+            MathJax.startup.promise.then(() => {
+               MathJax.typesetPromise();
+            });
+          }
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body>
+    <header><h1><a href='../../index.html' style='color: #fff; text-decoration: none;'>Kinematics, Dynamic and Control of Robot</a></h1><button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button></header>
+    <div class='container'><aside class='sidebar'><nav class='sidebar-nav'><ul><li class='module-item '><a href='../module-1/topic-2.html'>Module 1: Introduction To Robotics</a></li><li class='module-item '><a href='../module-2/topic-8.html'>Module 2: Robot Anatomy</a></li><li class='module-item '><a href='../module-3/topic-16.html'>Module 3: Degrees of Freedom</a></li><li class='module-item active'><a href='../module-4/topic-19.html'>Module 4: Robot Specifications</a><ul class='topic-list'><li class='topic-item active'><a href='topic-19.html'>Robot Selection for an Application</a></li><li class='topic-item '><a href='topic-20.html'>Number of Axes (Degrees of Freedom)</a></li></ul></li></ul></nav></aside><main class='main-content'><div class='topic-section' id='topic-19'><h1>Robot Selection for an Application</h1><div class='topic-content'><p>Choosing the right robotic manipulator for a specific task is a crucial engineering decision. It involves a trade-off between capability, cost, and complexity. An oversized, overly complex robot is an unnecessary expense, while an underspecified robot will fail to perform its task reliably. The selection process begins with a thorough analysis of the application's requirements, which are then matched against the key performance specifications of available robots.</p>
+<ol>
+<li><span class="selected">Number of Axes (Degrees of Freedom)</span></li>
+<li><span class="selected">Payload Capacity</span></li>
+<li><span class="selected">Reach and Stroke</span></li>
+<li><span class="selected">Speed</span></li>
+<li><span class="selected">Accuracy, Repeatability, and Precision</span></li>
+<li><span class="selected">Operating Environment</span></li>
+</ol></div></div></main></div>
+    <script src="../../assets/js/quiz.js"></script>
+    
+    <script>
+function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('open');
+    document.querySelector('.sidebar-overlay').classList.toggle('open');
+    document.body.classList.toggle('sidebar-open');
+}
+</script>
+
+</body>
+</html>

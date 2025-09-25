@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinematic Pairs (Joints) and Constraints | Module 3</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        startup: {
+          ready: () => {
+            MathJax.startup.defaultReady();
+            MathJax.startup.promise.then(() => {
+               MathJax.typesetPromise();
+            });
+          }
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body>
+    <header><h1><a href='../../index.html' style='color: #fff; text-decoration: none;'>Kinematics, Dynamic and Control of Robot</a></h1><button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button></header>
+    <div class='container'><aside class='sidebar'><nav class='sidebar-nav'><ul><li class='module-item '><a href='../module-1/topic-2.html'>Module 1: Introduction To Robotics</a></li><li class='module-item '><a href='../module-2/topic-8.html'>Module 2: Robot Anatomy</a></li><li class='module-item active'><a href='../module-3/topic-16.html'>Module 3: Degrees of Freedom</a><ul class='topic-list'><li class='topic-item '><a href='topic-16.html'>What are Degrees of Freedom?</a></li><li class='topic-item active'><a href='topic-17.html'>Kinematic Pairs (Joints) and Constraints</a></li><li class='topic-item '><a href='topic-18.html'>Interactive Lab: Common Joint Types</a></li></ul></li><li class='module-item '><a href='../module-4/topic-19.html'>Module 4: Robot Specifications</a></li></ul></nav></aside><main class='main-content'><div class='topic-section' id='topic-17'><h1>Kinematic Pairs (Joints) and Constraints</h1><div class='topic-content'><p><span class="selected">When we connect bodies (called </span><strong><span class="selected">links</span></strong><span class="selected">) together using joints, we introduce </span><strong><span class="selected">constraints</span></strong><span class="selected">, which reduce the total DOF of the system. Each joint allows certain motions and restricts others.</span></p>
+<h3><span class="selected">Common Joint Types and Their DOF</span></h3>
+<table style="border-collapse: collapse; border-style: solid; width: 98.236%; border-width: 1px;" border="1">
+<tbody>
+<tr>
+<th style="width: 15.163%; padding: 10px;">
+<p><span class="selected">Joint Type</span></p>
+</th>
+<th style="width: 11.5385%; padding: 10px;">
+<p><span class="selected">Symbol</span></p>
+</th>
+<th style="width: 45.2656%; padding: 10px;">
+<p><span class="selected">Description &amp; Motion Allowed</span></p>
+</th>
+<th style="width: 12.9224%; padding: 10px;">
+<p><span class="selected">DOF (Spatial)</span></p>
+</th>
+<th style="width: 15.1105%; padding: 10px;">
+<p><span class="selected">Constraints</span></p>
+</th>
+</tr>
+<tr>
+<td style="width: 15.163%; padding: 10px;">
+<p><strong><span class="selected">Revolute</span></strong></p>
+</td>
+<td style="width: 11.5385%; padding: 10px; text-align: center;">
+<p><span class="selected">R</span></p>
+</td>
+<td style="width: 45.2656%; padding: 10px;">
+<p><span class="selected">Hinge-like, allows only rotation about one axis.</span></p>
+</td>
+<td style="width: 12.9224%; padding: 10px; text-align: center;">
+<p><span class="selected">1</span></p>
+</td>
+<td style="width: 15.1105%; padding: 10px; text-align: center;">
+<p><span class="selected">5</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 15.163%; padding: 10px;">
+<p><strong><span class="selected">Prismatic</span></strong></p>
+</td>
+<td style="width: 11.5385%; padding: 10px; text-align: center;">
+<p><span class="selected">P</span></p>
+</td>
+<td style="width: 45.2656%; padding: 10px;">
+<p><span class="selected">Sliding, allows only linear motion along one axis.</span></p>
+</td>
+<td style="width: 12.9224%; padding: 10px; text-align: center;">
+<p><span class="selected">1</span></p>
+</td>
+<td style="width: 15.1105%; padding: 10px; text-align: center;">
+<p><span class="selected">5</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 15.163%; padding: 10px;">
+<p><strong><span class="selected">Cylindrical</span></strong></p>
+</td>
+<td style="width: 11.5385%; padding: 10px; text-align: center;">
+<p><span class="selected">C</span></p>
+</td>
+<td style="width: 45.2656%; padding: 10px;">
+<p><span class="selected">Allows rotation and translation about the same axis.</span></p>
+</td>
+<td style="width: 12.9224%; padding: 10px; text-align: center;">
+<p><span class="selected">2</span></p>
+</td>
+<td style="width: 15.1105%; padding: 10px; text-align: center;">
+<p><span class="selected">4</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 15.163%; padding: 10px;">
+<p><strong><span class="selected">Spherical</span></strong></p>
+</td>
+<td style="width: 11.5385%; padding: 10px; text-align: center;">
+<p><span class="selected">S</span></p>
+</td>
+<td style="width: 45.2656%; padding: 10px;">
+<p><span class="selected">Ball-and-socket, allows 3 rotational motions.</span></p>
+</td>
+<td style="width: 12.9224%; padding: 10px; text-align: center;">
+<p><span class="selected">3</span></p>
+</td>
+<td style="width: 15.1105%; padding: 10px; text-align: center;">
+<p><span class="selected">3</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 15.163%; padding: 10px;">
+<p><strong><span class="selected">Screw</span></strong></p>
+</td>
+<td style="width: 11.5385%; padding: 10px; text-align: center;">
+<p><span class="selected">H</span></p>
+</td>
+<td style="width: 45.2656%; padding: 10px;">
+<p><span class="selected">Coupled rotation and translation (like a nut on a bolt).</span></p>
+</td>
+<td style="width: 12.9224%; padding: 10px; text-align: center;">
+<p><span class="selected">1</span></p>
+</td>
+<td style="width: 15.1105%; padding: 10px; text-align: center;">
+<p><span class="selected">5</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 15.163%; padding: 10px;">
+<p><strong><span class="selected">Planar</span></strong></p>
+</td>
+<td style="width: 11.5385%; padding: 10px; text-align: center;">
+<p><span class="selected">E</span></p>
+</td>
+<td style="width: 45.2656%; padding: 10px;">
+<p><span class="selected">One surface sliding on another.</span></p>
+</td>
+<td style="width: 12.9224%; padding: 10px; text-align: center;">
+<p><span class="selected">3</span></p>
+</td>
+<td style="width: 15.1105%; padding: 10px; text-align: center;">
+<p><span class="selected">3</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p></div></div></main></div>
+    <script src="../../assets/js/quiz.js"></script>
+    
+    <script>
+function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('open');
+    document.querySelector('.sidebar-overlay').classList.toggle('open');
+    document.body.classList.toggle('sidebar-open');
+}
+</script>
+
+</body>
+</html>
